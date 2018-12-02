@@ -162,7 +162,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Sign Up" id="Zwn-MX-a4n">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="6Pr-0c-sIZ"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="6Pr-0c-sIZ">
+                                            <connections>
+                                                <action selector="backAction:" destination="xgN-NP-eRR" id="oY8-zZ-Ptb"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -173,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NO7-p0-rmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-802" y="722"/>
+            <point key="canvasLocation" x="-802" y="633"/>
         </scene>
         <!--Forgot PasswordVC-->
         <scene sceneID="1pY-vh-h5J">
@@ -183,23 +187,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q8u-2x-DUL">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8u-2x-DUL">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Forgot Password" id="BOu-Vz-IgT">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="9Xh-pb-zCc"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="9Xh-pb-zCc">
+                                            <connections>
+                                                <action selector="backAction:" destination="Yr4-36-Hbo" id="20B-F2-Doa"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Oops" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="FuK-i9-jNT">
+                                <rect key="frame" x="110" y="135" width="152" height="43"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We do not support forgot password." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14c-XN-vjR">
+                                <rect key="frame" x="71" y="186" width="233" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you want to retrive your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccy-jf-GyA">
+                                <rect key="frame" x="76" y="224" width="221" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email: forgot@mhjn.xyz " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOc-4a-OMN">
+                                <rect key="frame" x="109" y="249" width="156" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with your supporting documents" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2W-il-CQo">
+                                <rect key="frame" x="82" y="274" width="210" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t98-AR-iTt">
+                                <rect key="frame" x="187" y="325" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will try our best to retrive your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szK-Fs-WHJ">
+                                <rect key="frame" x="50" y="333" width="274" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="14c-XN-vjR" firstAttribute="top" secondItem="FuK-i9-jNT" secondAttribute="bottom" constant="8" symbolic="YES" id="2R4-pV-G0T"/>
+                            <constraint firstItem="ccy-jf-GyA" firstAttribute="centerX" secondItem="lOc-4a-OMN" secondAttribute="centerX" id="2ay-Y9-wj5"/>
+                            <constraint firstAttribute="trailing" secondItem="Q8u-2x-DUL" secondAttribute="trailing" id="6qb-6E-c7K"/>
+                            <constraint firstItem="szK-Fs-WHJ" firstAttribute="top" secondItem="U2W-il-CQo" secondAttribute="bottom" constant="42" id="FJA-ao-TpS"/>
+                            <constraint firstItem="lOc-4a-OMN" firstAttribute="centerX" secondItem="U2W-il-CQo" secondAttribute="centerX" id="FRZ-GZ-e6x"/>
+                            <constraint firstItem="FuK-i9-jNT" firstAttribute="leading" secondItem="SQg-Js-exa" secondAttribute="leading" constant="110" id="G73-vs-29P"/>
+                            <constraint firstItem="Q8u-2x-DUL" firstAttribute="leading" secondItem="Boc-xt-G9W" secondAttribute="leading" id="Xdn-gY-O2w"/>
+                            <constraint firstItem="Q8u-2x-DUL" firstAttribute="centerX" secondItem="14c-XN-vjR" secondAttribute="centerX" id="Z27-fk-SLo"/>
+                            <constraint firstItem="szK-Fs-WHJ" firstAttribute="top" secondItem="t98-AR-iTt" secondAttribute="bottom" constant="8" symbolic="YES" id="cH8-vZ-RwE"/>
+                            <constraint firstItem="ccy-jf-GyA" firstAttribute="top" secondItem="14c-XN-vjR" secondAttribute="bottom" constant="21" id="dLg-Kv-9kX"/>
+                            <constraint firstItem="U2W-il-CQo" firstAttribute="centerX" secondItem="t98-AR-iTt" secondAttribute="centerX" id="eGX-lt-eIl"/>
+                            <constraint firstItem="t98-AR-iTt" firstAttribute="centerX" secondItem="szK-Fs-WHJ" secondAttribute="centerX" id="fPW-27-Uv2"/>
+                            <constraint firstItem="U2W-il-CQo" firstAttribute="top" secondItem="lOc-4a-OMN" secondAttribute="bottom" constant="8" symbolic="YES" id="ieC-v5-5DO"/>
+                            <constraint firstItem="14c-XN-vjR" firstAttribute="centerX" secondItem="lOc-4a-OMN" secondAttribute="centerX" id="m3w-Vv-ddV"/>
+                            <constraint firstItem="Q8u-2x-DUL" firstAttribute="top" secondItem="SQg-Js-exa" secondAttribute="top" id="pYU-1f-eCc"/>
+                            <constraint firstItem="lOc-4a-OMN" firstAttribute="top" secondItem="ccy-jf-GyA" secondAttribute="bottom" constant="8" symbolic="YES" id="s6Q-Zk-QuB"/>
+                            <constraint firstItem="FuK-i9-jNT" firstAttribute="centerX" secondItem="ccy-jf-GyA" secondAttribute="centerX" id="vDn-un-Jve"/>
+                            <constraint firstItem="FuK-i9-jNT" firstAttribute="top" secondItem="Q8u-2x-DUL" secondAttribute="bottom" constant="71" id="y6x-Ba-BRu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SQg-Js-exa"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGr-BI-AT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2332" y="722"/>
+            <point key="canvasLocation" x="-2324" y="633"/>
         </scene>
         <!--Approved-->
         <scene sceneID="ce2-PA-IYp">
