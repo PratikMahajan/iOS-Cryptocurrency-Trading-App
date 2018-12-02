@@ -13,7 +13,7 @@
         <!--Transfer-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="CurrencyTrading" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="TransferVC" customModule="CurrencyTrading" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
         <!--Profile-->
         <scene sceneID="yYC-8m-CFa">
             <objects>
-                <viewController id="pcn-n8-NZP" sceneMemberID="viewController">
+                <viewController id="pcn-n8-NZP" customClass="ProfileVC" customModule="CurrencyTrading" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Zb-B3-l69">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,8 +104,8 @@
         <!--Updates-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="CurrencyTrading" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                <viewController id="8rJ-Kc-sve" customClass="UpdatesVC" customModule="CurrencyTrading" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW" customClass="UpdatesVC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -147,10 +147,10 @@
             </objects>
             <point key="canvasLocation" x="788" y="458"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="7bN-gq-gtJ">
             <objects>
-                <viewController id="sKS-KD-42p" sceneMemberID="viewController">
+                <viewController id="sKS-KD-42p" customClass="LoginVC" customModule="CurrencyTrading" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Imb-ji-oYd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
