@@ -158,7 +158,58 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGr-BI-AT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1551" y="722"/>
+            <point key="canvasLocation" x="-2332" y="722"/>
+        </scene>
+        <!--Approved-->
+        <scene sceneID="UNy-RD-QNS">
+            <objects>
+                <viewController id="BbK-Y7-KpV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xN7-Gm-v0q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0TC-Js-q8n"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Approved" id="8y7-5k-jDS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slT-vg-b9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1551" y="2107"/>
+        </scene>
+        <!--To Do-->
+        <scene sceneID="LAI-Jj-YPN">
+            <objects>
+                <viewController id="a8j-cT-v8L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="buY-xP-etf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BuE-fq-Eba"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="To Do" id="T2T-5j-NVq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EcH-ew-oeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2" y="2108"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Das-6J-Y0N">
+            <objects>
+                <tabBarController id="izC-im-yFw" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vyo-PY-jbb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="a8j-cT-v8L" kind="relationship" relationship="viewControllers" id="B09-l7-y44"/>
+                        <segue destination="BbK-Y7-KpV" kind="relationship" relationship="viewControllers" id="D1X-Qo-rTe"/>
+                        <segue destination="pcn-n8-NZP" kind="relationship" relationship="viewControllers" id="kNa-IC-83k"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqS-C1-dFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1551" y="1333"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="7bN-gq-gtJ">
@@ -177,7 +228,6 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signInAction:" destination="sKS-KD-42p" eventType="touchUpInside" id="wq0-kJ-9Wk"/>
-                                    <segue destination="49e-Tb-3d3" kind="showDetail" identifier="userLogin" id="DkL-HB-aLw"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="abc@xyz.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1p-bc-GcK">
@@ -269,11 +319,13 @@
                     <connections>
                         <outlet property="passwordTxt" destination="vX7-G4-GJw" id="ors-t8-CXr"/>
                         <outlet property="usernameTxt" destination="V1p-bc-GcK" id="6f2-6v-QGa"/>
+                        <segue destination="izC-im-yFw" kind="show" identifier="verification" id="XRI-1d-z0s"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="user" id="KkG-pQ-7Wn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZy-xY-6tt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1171" y="-135"/>
+            <point key="canvasLocation" x="-1551" y="-134"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -343,4 +395,7 @@
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kNa-IC-83k"/>
+    </inferredMetricsTieBreakers>
 </document>
