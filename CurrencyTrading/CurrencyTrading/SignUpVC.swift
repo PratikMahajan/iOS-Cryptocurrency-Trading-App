@@ -1,5 +1,5 @@
 //
-//  ProfileVC.swift
+//  SignUpVC.swift
 //  CurrencyTrading
 //
 //  Created by Pratik Mahajan on 12/2/18.
@@ -8,12 +8,8 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
+class SignUpVC: UIViewController {
 
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var userName: UILabel!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -10,6 +10,29 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var usernameTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    
+    
+    
+    @IBAction func signInAction(_ sender: Any) {
+        
+        
+    }
+    
+    @IBAction func signUpAction(_ sender: Any) {
+        
+        
+    }
+    
+    @IBAction func forgotPasswordAction(_ sender: Any) {
+        
+        
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

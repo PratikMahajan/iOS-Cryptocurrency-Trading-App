@@ -13,8 +13,10 @@
 		C34A485821B3AD6000472F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C34A485621B3AD6000472F67 /* LaunchScreen.storyboard */; };
 		C34A486021B3C03F00472F67 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A485F21B3C03F00472F67 /* ProfileVC.swift */; };
 		C34A486221B3C10500472F67 /* TransferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486121B3C10500472F67 /* TransferVC.swift */; };
-		C34A486421B3C13200472F67 /* UpdatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486321B3C13200472F67 /* UpdatesVC.swift */; };
 		C34A486621B3C18800472F67 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486521B3C18800472F67 /* LoginVC.swift */; };
+		C34A486821B3D41300472F67 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486721B3D41300472F67 /* SignUpVC.swift */; };
+		C34A486A21B3D48100472F67 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486921B3D48100472F67 /* ForgotPasswordVC.swift */; };
+		C34A486C21B3D62C00472F67 /* TrendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486B21B3D62C00472F67 /* TrendsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +28,10 @@
 		C34A485921B3AD6000472F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C34A485F21B3C03F00472F67 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		C34A486121B3C10500472F67 /* TransferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferVC.swift; sourceTree = "<group>"; };
-		C34A486321B3C13200472F67 /* UpdatesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesVC.swift; sourceTree = "<group>"; };
 		C34A486521B3C18800472F67 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		C34A486721B3D41300472F67 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		C34A486921B3D48100472F67 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		C34A486B21B3D62C00472F67 /* TrendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		C34A484A21B3AD5C00472F67 /* CurrencyTrading */ = {
 			isa = PBXGroup;
 			children = (
+				C34A486B21B3D62C00472F67 /* TrendsVC.swift */,
 				C34A484B21B3AD5C00472F67 /* AppDelegate.swift */,
 				C34A485121B3AD5C00472F67 /* Main.storyboard */,
 				C34A485421B3AD6000472F67 /* Assets.xcassets */,
@@ -67,8 +72,9 @@
 				C34A485921B3AD6000472F67 /* Info.plist */,
 				C34A485F21B3C03F00472F67 /* ProfileVC.swift */,
 				C34A486121B3C10500472F67 /* TransferVC.swift */,
-				C34A486321B3C13200472F67 /* UpdatesVC.swift */,
 				C34A486521B3C18800472F67 /* LoginVC.swift */,
+				C34A486721B3D41300472F67 /* SignUpVC.swift */,
+				C34A486921B3D48100472F67 /* ForgotPasswordVC.swift */,
 			);
 			path = CurrencyTrading;
 			sourceTree = "<group>";
@@ -145,9 +151,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C34A486021B3C03F00472F67 /* ProfileVC.swift in Sources */,
-				C34A486421B3C13200472F67 /* UpdatesVC.swift in Sources */,
+				C34A486C21B3D62C00472F67 /* TrendsVC.swift in Sources */,
+				C34A486A21B3D48100472F67 /* ForgotPasswordVC.swift in Sources */,
 				C34A486221B3C10500472F67 /* TransferVC.swift in Sources */,
 				C34A484C21B3AD5C00472F67 /* AppDelegate.swift in Sources */,
+				C34A486821B3D41300472F67 /* SignUpVC.swift in Sources */,
 				C34A486621B3C18800472F67 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  ProfileVC.swift
+//  ForgotPasswordVC.swift
 //  CurrencyTrading
 //
 //  Created by Pratik Mahajan on 12/2/18.
@@ -8,12 +8,8 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
+class ForgotPasswordVC: UIViewController {
 
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var userName: UILabel!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

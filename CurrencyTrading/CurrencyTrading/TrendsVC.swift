@@ -1,5 +1,5 @@
 //
-//  UpdatesVC.swift
+//  TrendsVC.swift
 //  CurrencyTrading
 //
 //  Created by Pratik Mahajan on 12/2/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UpdatesVC: UIViewController {
+class TrendsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
