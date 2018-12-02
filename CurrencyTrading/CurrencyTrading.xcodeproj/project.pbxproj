@@ -17,6 +17,8 @@
 		C34A486821B3D41300472F67 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486721B3D41300472F67 /* SignUpVC.swift */; };
 		C34A486A21B3D48100472F67 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486921B3D48100472F67 /* ForgotPasswordVC.swift */; };
 		C34A486C21B3D62C00472F67 /* TrendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486B21B3D62C00472F67 /* TrendsVC.swift */; };
+		C34A486E21B3DF9C00472F67 /* VerificationApprovedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486D21B3DF9C00472F67 /* VerificationApprovedVC.swift */; };
+		C34A487021B3DFB700472F67 /* VerificationToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486F21B3DFB700472F67 /* VerificationToDoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		C34A486721B3D41300472F67 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		C34A486921B3D48100472F67 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		C34A486B21B3D62C00472F67 /* TrendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsVC.swift; sourceTree = "<group>"; };
+		C34A486D21B3DF9C00472F67 /* VerificationApprovedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationApprovedVC.swift; sourceTree = "<group>"; };
+		C34A486F21B3DFB700472F67 /* VerificationToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationToDoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				C34A486521B3C18800472F67 /* LoginVC.swift */,
 				C34A486721B3D41300472F67 /* SignUpVC.swift */,
 				C34A486921B3D48100472F67 /* ForgotPasswordVC.swift */,
+				C34A486D21B3DF9C00472F67 /* VerificationApprovedVC.swift */,
+				C34A486F21B3DFB700472F67 /* VerificationToDoVC.swift */,
 			);
 			path = CurrencyTrading;
 			sourceTree = "<group>";
@@ -154,8 +160,10 @@
 				C34A486C21B3D62C00472F67 /* TrendsVC.swift in Sources */,
 				C34A486A21B3D48100472F67 /* ForgotPasswordVC.swift in Sources */,
 				C34A486221B3C10500472F67 /* TransferVC.swift in Sources */,
+				C34A486E21B3DF9C00472F67 /* VerificationApprovedVC.swift in Sources */,
 				C34A484C21B3AD5C00472F67 /* AppDelegate.swift in Sources */,
 				C34A486821B3D41300472F67 /* SignUpVC.swift in Sources */,
+				C34A487021B3DFB700472F67 /* VerificationToDoVC.swift in Sources */,
 				C34A486621B3C18800472F67 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
