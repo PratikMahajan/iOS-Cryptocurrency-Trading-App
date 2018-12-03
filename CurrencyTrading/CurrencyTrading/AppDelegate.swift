@@ -59,6 +59,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    func testInsert(){
+        //
+        //        do{
+        //            try dbQueue.write { db  in
+        //                var player = User(user_id: "test1", username: "test1", password: "test1", role: "user")
+        //                try player.insert(db)
+        //            }
+        //        }
+        //        catch{
+        //            print ("Error in insert")
+        //        }
+        do{
+            try dbQueue.write { db in
+                try db.execute(
+                    "delete from user")
+                print ("deleted")
+            }}
+        catch{
+            print ("not deleted")
+        }
+    }
+    
+    
+    
     //--------------------------------------------------------------
     
     func changeEntry(role : String){
@@ -88,6 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         try! setupDatabase(application)
+        testInsert()
         getDatabase()
         if rowCount>0{
             getData()
