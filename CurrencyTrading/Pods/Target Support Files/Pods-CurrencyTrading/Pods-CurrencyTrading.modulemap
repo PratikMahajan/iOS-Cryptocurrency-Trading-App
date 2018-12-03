@@ -1,6 +1,0 @@
-framework module Pods_CurrencyTrading {
-  umbrella header "Pods-CurrencyTrading-umbrella.h"
-
-  export *
-  module * { export * }
-}
