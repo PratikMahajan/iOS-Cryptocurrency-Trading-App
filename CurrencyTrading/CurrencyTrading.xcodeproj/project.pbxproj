@@ -19,9 +19,13 @@
 		C34A486C21B3D62C00472F67 /* TrendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486B21B3D62C00472F67 /* TrendsVC.swift */; };
 		C34A486E21B3DF9C00472F67 /* VerificationApprovedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486D21B3DF9C00472F67 /* VerificationApprovedVC.swift */; };
 		C34A487021B3DFB700472F67 /* VerificationToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486F21B3DFB700472F67 /* VerificationToDoVC.swift */; };
+		E241B3CBA85AE069A3C8C024 /* Pods_CurrencyTrading.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9383E63EF9B22E9BE774BB3 /* Pods_CurrencyTrading.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7DA57651471BACC9D86F0026 /* Pods-CurrencyTrading.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTrading.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTrading/Pods-CurrencyTrading.debug.xcconfig"; sourceTree = "<group>"; };
+		AC26A0313F56A864DA8942C0 /* Pods-CurrencyTrading.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTrading.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTrading/Pods-CurrencyTrading.release.xcconfig"; sourceTree = "<group>"; };
+		B9383E63EF9B22E9BE774BB3 /* Pods_CurrencyTrading.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTrading.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34A484821B3AD5C00472F67 /* CurrencyTrading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyTrading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34A484B21B3AD5C00472F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C34A485221B3AD5C00472F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E241B3CBA85AE069A3C8C024 /* Pods_CurrencyTrading.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31917E6DA2D2829F2A0B4585 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9383E63EF9B22E9BE774BB3 /* Pods_CurrencyTrading.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C34A483F21B3AD5C00472F67 = {
 			isa = PBXGroup;
 			children = (
 				C34A484A21B3AD5C00472F67 /* CurrencyTrading */,
 				C34A484921B3AD5C00472F67 /* Products */,
+				FBA6B5B328B0057BFA435F68 /* Pods */,
+				31917E6DA2D2829F2A0B4585 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +100,15 @@
 			path = CurrencyTrading;
 			sourceTree = "<group>";
 		};
+		FBA6B5B328B0057BFA435F68 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DA57651471BACC9D86F0026 /* Pods-CurrencyTrading.debug.xcconfig */,
+				AC26A0313F56A864DA8942C0 /* Pods-CurrencyTrading.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C34A485C21B3AD6000472F67 /* Build configuration list for PBXNativeTarget "CurrencyTrading" */;
 			buildPhases = (
+				BE1AFE3F999EEE939AB693B9 /* [CP] Check Pods Manifest.lock */,
 				C34A484421B3AD5C00472F67 /* Sources */,
 				C34A484521B3AD5C00472F67 /* Frameworks */,
 				C34A484621B3AD5C00472F67 /* Resources */,
+				74E67AA55E2A6C153F7F518B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,6 +176,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		74E67AA55E2A6C153F7F518B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyTrading/Pods-CurrencyTrading-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyTrading/Pods-CurrencyTrading-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE1AFE3F999EEE939AB693B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CurrencyTrading-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C34A484421B3AD5C00472F67 /* Sources */ = {
@@ -306,6 +379,7 @@
 		};
 		C34A485D21B3AD6000472F67 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DA57651471BACC9D86F0026 /* Pods-CurrencyTrading.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -323,6 +397,7 @@
 		};
 		C34A485E21B3AD6000472F67 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC26A0313F56A864DA8942C0 /* Pods-CurrencyTrading.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
