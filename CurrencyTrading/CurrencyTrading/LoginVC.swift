@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GRDB
 
 class LoginVC: UIViewController {
 
@@ -14,8 +15,10 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     
     
-    
     @IBAction func signInAction(_ sender: Any) {
+        
+        
+        
         
         
     }
@@ -30,13 +33,39 @@ class LoginVC: UIViewController {
         
     }
     
+//    func testInsert(){
+//
+//        do{
+//            try dbQueue.write { db  in
+//                var player = User(user_id: "test1", username: "test1", password: "test1", role: "user")
+//                try player.insert(db)
+//            }
+//        }
+//        catch{
+//            print ("Error in insert")
+//        }
+////        do{
+////            try dbQueue.write { db in
+////                try db.execute(
+////                    "Drop table user")
+////            print ("deleted")
+////            }}
+////        catch{
+////            print ("not deleted")
+////        }
+//
+//
+//
+//
+//    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {

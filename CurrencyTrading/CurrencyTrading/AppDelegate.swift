@@ -7,15 +7,94 @@
 //
 
 import UIKit
+import GRDB
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var rowCount: Int = 0
+    var role: String = ""
 
 
+    //-------------------------------------------------------------
+    // Database Connection
+    var dbQueue: DatabaseQueue!
+    
+    private func setupDatabase(_ application: UIApplication) throws {
+        let databaseURL = try FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("db2.sqlite")
+        dbQueue = try AppDatabase.openDatabase(atPath: databaseURL.path)
+        
+        // Be a nice iOS citizen, and don't consume too much memory
+        // See https://github.com/groue/GRDB.swift/#memory-management
+        dbQueue.setupMemoryManagement(in: application)
+    }
+    
+    //--------------------------------------------------------------
+    //database reading
+    
+    func getDatabase(){
+        do{
+            try dbQueue.read { db in
+                rowCount = try User.fetchCount(db)
+            }}
+        catch{
+            print ("error reading db")
+        }
+        
+    }
+    
+    func getData(){
+        do{
+            try dbQueue.read { db in
+                let user = try User.fetchAll(db)
+                role = user[0].role
+            }
+        }
+        catch{
+            print("Error in reading data")
+        }
+        
+    }
+    
+    //--------------------------------------------------------------
+    
+    func changeEntry(role : String){
+        if role=="user" {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "userwindow")
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+        }
+        if role == "admin" {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "verificationwindow")
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+        }
+        
+        
+    }
+    
+    
+    //--------------------------------------------------------------
+    
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        try! setupDatabase(application)
+        getDatabase()
+        if rowCount>0{
+            getData()
+            changeEntry(role: role)
+        }
+       
+
         return true
     }
 
