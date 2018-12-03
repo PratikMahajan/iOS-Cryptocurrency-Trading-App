@@ -31,6 +31,15 @@ class LoginVC: UIViewController {
     }
     
     
+    func getDatabase(){
+        
+    
+        
+    }
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
