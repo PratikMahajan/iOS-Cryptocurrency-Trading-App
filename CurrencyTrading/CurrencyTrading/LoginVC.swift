@@ -16,23 +16,32 @@ class LoginVC: UIViewController {
     var role: String = ""
     var un : String = ""
     var ps : String = ""
-    
+    var k : Bool = true
     @IBAction func signInAction(_ sender: Any) {
         un = usernameTxt.text!
         ps = passwordTxt.text!
         
         loginCheck ()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change 2 to desired number of seconds
-            self.getInfo()
-            print (self.role)
-            if self.role == "user"{
-//                print ("performing segue")
-                self.performSegue(withIdentifier: "user", sender: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 1 to desired number of seconds
+            if self.k{
+                self.getInfo()
+                print (self.role)
+                if self.role == "user"{
+                    //                print ("performing segue")
+                    self.performSegue(withIdentifier: "user", sender: nil)
+                }
+                if self.role == "admin"{
+                    //                print ("performing segue")
+                    self.performSegue(withIdentifier: "verification", sender: nil)
+                }
             }
-            if self.role == "admin"{
-//                print ("performing segue")
-                self.performSegue(withIdentifier: "verification", sender: nil)
+            else{
+                let alert = UIAlertController(title: "ERROR", message: "Wrong Information", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
             }
+            
         }
 //        getInfo()
 //        print (self.role)
@@ -77,16 +86,24 @@ class LoginVC: UIViewController {
         
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != 200{
+                    self.k = false
+                    return
+                }
+            }
+            
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
-//                print(responseJSON)
                 let transfer = responseJSON["role"] as! String
                 let usr = responseJSON["userid"] as! String
                 self.role = transfer
+                self.k = true
                 self.insertTable(rol: transfer, uid: usr)
                 
             }
