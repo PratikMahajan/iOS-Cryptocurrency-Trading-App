@@ -25,7 +25,7 @@ class LoginVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 1 to desired number of seconds
             if self.k{
                 self.getInfo()
-                print (self.role)
+//                print (self.role)
                 if self.role == "user"{
                     //                print ("performing segue")
                     self.performSegue(withIdentifier: "user", sender: nil)
@@ -59,7 +59,7 @@ class LoginVC: UIViewController {
             try dbQueue.read { db in
                 let user = try User.fetchAll(db)
                 self.role = user[0].role
-                print (user)
+//                print (user)
             }
         }
         catch{
@@ -133,7 +133,7 @@ class LoginVC: UIViewController {
             try dbQueue.write { db in
                 try db.execute(
                     "insert into user values (?,?,?,?)", arguments: [uid, un, ps, rol])
-                print ("inserted")
+//                print ("inserted")
             }}
         catch{
             print ("error in insert")

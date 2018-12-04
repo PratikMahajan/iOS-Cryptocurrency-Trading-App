@@ -53,7 +53,7 @@ class ProfileVC: UIViewController {
             let img: UIImage = UIImage(data: data)!
             profileImage.image = img
         }
-        print (fname+"--"+lname)
+//        print (fname+"--"+lname)
         userName?.text = username
         nameData?.text = fname+" "+lname
         emailData?.text = email

@@ -10,9 +10,33 @@ import UIKit
 
 class TransferVC: UIViewController {
 
+    @IBOutlet weak var buyContainer: UIView!
+    @IBOutlet weak var sellContainer: UIView!
+    
+    
+    
+    @IBAction func selectedSegment(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0 : buyContainer.isHidden = false
+                sellContainer.isHidden = true
+        case 1: buyContainer.isHidden = true
+                sellContainer.isHidden = false
+        default: break;
+            
+        }
+        
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        buyContainer.isHidden = false
+        sellContainer.isHidden = true
+        
         // Do any additional setup after loading the view.
     }
 
