@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class VerificationApprovedVC: UITableViewController {
 
     override func viewDidLoad() {

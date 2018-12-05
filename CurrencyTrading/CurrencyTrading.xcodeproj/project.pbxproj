@@ -23,6 +23,7 @@
 		C34A487D21B4F47800472F67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A487C21B4F47800472F67 /* User.swift */; };
 		C34A488321B65C3400472F67 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A488221B65C3400472F67 /* BuyView.swift */; };
 		C34A488521B65C4500472F67 /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A488421B65C4500472F67 /* SellView.swift */; };
+		C34A488921B7B0AF00472F67 /* MyDocsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A488821B7B0AF00472F67 /* MyDocsVC.swift */; };
 		E241B3CBA85AE069A3C8C024 /* Pods_CurrencyTrading.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9383E63EF9B22E9BE774BB3 /* Pods_CurrencyTrading.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		C34A487C21B4F47800472F67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C34A488221B65C3400472F67 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		C34A488421B65C4500472F67 /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
+		C34A488821B7B0AF00472F67 /* MyDocsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDocsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				C34A486F21B3DFB700472F67 /* VerificationToDoVC.swift */,
 				C34A488221B65C3400472F67 /* BuyView.swift */,
 				C34A488421B65C4500472F67 /* SellView.swift */,
+				C34A488821B7B0AF00472F67 /* MyDocsVC.swift */,
 			);
 			path = CurrencyTrading;
 			sourceTree = "<group>";
@@ -205,10 +208,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyTrading/Pods-CurrencyTrading-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +261,7 @@
 				C34A487021B3DFB700472F67 /* VerificationToDoVC.swift in Sources */,
 				C34A486621B3C18800472F67 /* LoginVC.swift in Sources */,
 				C34A487D21B4F47800472F67 /* User.swift in Sources */,
+				C34A488921B7B0AF00472F67 /* MyDocsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

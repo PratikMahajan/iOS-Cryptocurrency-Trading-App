@@ -8,6 +8,8 @@
 
 import UIKit
 import GRDB
+import AWSCore
+import AWSS3
 
 class ProfileVC: UIViewController {
 
@@ -19,6 +21,9 @@ class ProfileVC: UIViewController {
     var email: String = ""
     @IBOutlet weak var nameData: UILabel!
     @IBOutlet weak var emailData: UILabel!
+    
+    
+    
     @IBAction func seeDocumentAction(_ sender: Any) {
         
         
@@ -55,7 +60,6 @@ class ProfileVC: UIViewController {
         getData()
         loginCheck()
         
-
         profileImage.layer.masksToBounds = true
         profileImage.layer.cornerRadius = profileImage.frame.width/2
         profileImage.clipsToBounds = true
@@ -136,6 +140,14 @@ class ProfileVC: UIViewController {
     }
     
 
+    
+    
+    
+    
+  
+    
+    
+    
     /*
     // MARK: - Navigation
 

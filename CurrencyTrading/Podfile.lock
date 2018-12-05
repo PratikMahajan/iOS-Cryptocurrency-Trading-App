@@ -1,16 +1,24 @@
 PODS:
+  - AWSCore (2.7.3)
+  - AWSS3 (2.7.3):
+    - AWSCore (= 2.7.3)
   - GRDB.swift (3.5.0)
 
 DEPENDENCIES:
+  - AWSS3
   - GRDB.swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AWSCore
+    - AWSS3
     - GRDB.swift
 
 SPEC CHECKSUMS:
+  AWSCore: 02d9ae2b6c2aaba6077fee2b09b0a62fb9b80282
+  AWSS3: 96488eeaae6059d5252a7065b2010f846bdafe14
   GRDB.swift: 225cf9c1354753e92e20c2a1fa2912b924c9da6e
 
-PODFILE CHECKSUM: 5efaab0185a15358734fd43a92d9bccbb258d180
+PODFILE CHECKSUM: a9841913cdb74cc22dccb0ae8c0ad38b06e74f42
 
 COCOAPODS: 1.5.3

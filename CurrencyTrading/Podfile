@@ -7,5 +7,6 @@ target 'CurrencyTrading' do
 
   # Pods for CurrencyTrading
   pod 'GRDB.swift'
+  pod 'AWSS3'
 
 end
