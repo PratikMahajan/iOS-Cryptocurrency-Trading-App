@@ -19,6 +19,19 @@ class ProfileVC: UIViewController {
     var email: String = ""
     @IBOutlet weak var nameData: UILabel!
     @IBOutlet weak var emailData: UILabel!
+    @IBAction func seeDocumentAction(_ sender: Any) {
+        
+        
+    }
+    
+    @IBAction func signOutAction(_ sender: Any) {
+        
+        deleteAll()
+        performSegue(withIdentifier: "signout", sender: nil)
+        
+    }
+    
+    
     
     func getData(){
         do{
@@ -103,7 +116,18 @@ class ProfileVC: UIViewController {
     }
     
     
-    
+    func deleteAll(){
+
+        do{
+            try dbQueue.write { db in
+                try db.execute(
+                    "delete from user")
+                print ("deleted")
+            }}
+        catch{
+            print ("not deleted")
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {
