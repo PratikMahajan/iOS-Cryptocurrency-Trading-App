@@ -291,6 +291,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="nqa-a3-CXX" kind="showDetail" identifier="showtododetail" id="kj2-GF-X3a"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -300,10 +303,82 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="To Do" id="ubk-QA-Rc8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="table" destination="dCL-1Y-BuA" id="T9t-gV-tyZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f18-Vt-7eW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-802" y="2105"/>
+        </scene>
+        <!--Admin Doc DetailVC-->
+        <scene sceneID="aqK-64-ooQ">
+            <objects>
+                <viewController id="nqa-a3-CXX" customClass="AdminDocDetailVC" customModule="CurrencyTrading" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ezH-e1-ARe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gzx-un-d74">
+                                <rect key="frame" x="30" y="149" width="315" height="171"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="171" id="48f-Pf-nIY"/>
+                                </constraints>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMe-sW-0QJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="HvH-bE-5m5">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="QKu-Of-D8j">
+                                            <connections>
+                                                <action selector="backAction:" destination="nqa-a3-CXX" id="e9x-1R-2We"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="Lzl-Ot-BmF">
+                                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="MzS-CY-270">
+                                                <rect key="frame" x="308" y="6.5" width="51" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </switch>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVD-Vl-kyV">
+                                <rect key="frame" x="164" y="452" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="updateButton:" destination="nqa-a3-CXX" eventType="touchUpInside" id="qfb-3M-hAs"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="okS-yl-TVb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gzx-un-d74" firstAttribute="centerX" secondItem="eVD-Vl-kyV" secondAttribute="centerX" id="BLi-vz-YDJ"/>
+                            <constraint firstItem="kMe-sW-0QJ" firstAttribute="leading" secondItem="ezH-e1-ARe" secondAttribute="leading" id="GVK-gl-73l"/>
+                            <constraint firstItem="kMe-sW-0QJ" firstAttribute="trailing" secondItem="okS-yl-TVb" secondAttribute="trailing" id="JWs-Q5-vvb"/>
+                            <constraint firstItem="Gzx-un-d74" firstAttribute="top" secondItem="okS-yl-TVb" secondAttribute="bottom" constant="83" id="K6t-GC-fdz"/>
+                            <constraint firstItem="Gzx-un-d74" firstAttribute="leading" secondItem="UmB-Yc-C5i" secondAttribute="leading" constant="30" id="LPu-Go-LcN"/>
+                            <constraint firstAttribute="trailing" secondItem="kMe-sW-0QJ" secondAttribute="trailing" id="UFf-fZ-N5l"/>
+                            <constraint firstItem="UmB-Yc-C5i" firstAttribute="bottom" secondItem="eVD-Vl-kyV" secondAttribute="bottom" constant="185" id="ah2-fW-Oaq"/>
+                            <constraint firstItem="okS-yl-TVb" firstAttribute="centerX" secondItem="Gzx-un-d74" secondAttribute="centerX" id="cxO-7B-mnk"/>
+                            <constraint firstItem="okS-yl-TVb" firstAttribute="top" secondItem="kMe-sW-0QJ" secondAttribute="bottom" id="jcr-Rm-MXh"/>
+                            <constraint firstItem="kMe-sW-0QJ" firstAttribute="top" secondItem="UmB-Yc-C5i" secondAttribute="top" id="p83-5H-gxM"/>
+                            <constraint firstItem="kMe-sW-0QJ" firstAttribute="leading" secondItem="okS-yl-TVb" secondAttribute="leading" id="zau-6V-WdX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UmB-Yc-C5i"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Gzx-un-d74" id="GQG-Q3-lRB"/>
+                        <outlet property="progressView" destination="okS-yl-TVb" id="3rk-c3-gPm"/>
+                        <outlet property="switch" destination="Lzl-Ot-BmF" id="Z6u-X5-SBl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6nl-ko-3Fa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1551.2" y="2876.3118440779613"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="9QC-OW-5ld">
@@ -556,6 +631,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="nqa-a3-CXX" kind="show" identifier="showapproveddetail" id="t7O-dY-l8i"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -565,6 +643,9 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Approved" id="vKW-Fh-XPq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="table" destination="O3f-f8-bjC" id="gQZ-SL-SeK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vN6-T4-4Dt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -840,6 +921,7 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kNa-IC-83k"/>
+        <segue reference="kj2-GF-X3a"/>
+        <segue reference="6PO-HS-N0L"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -24,6 +24,9 @@
 		C34A488321B65C3400472F67 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A488221B65C3400472F67 /* BuyView.swift */; };
 		C34A488521B65C4500472F67 /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A488421B65C4500472F67 /* SellView.swift */; };
 		C34A488921B7B0AF00472F67 /* MyDocsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A488821B7B0AF00472F67 /* MyDocsVC.swift */; };
+		C34A489621B8DD8800472F67 /* TableViewCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A489421B8DD8700472F67 /* TableViewCellVC.swift */; };
+		C34A489721B8DD8800472F67 /* TableViewCellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34A489521B8DD8800472F67 /* TableViewCellVC.xib */; };
+		C34A489921B8E84C00472F67 /* AdminDocDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A489821B8E84C00472F67 /* AdminDocDetailVC.swift */; };
 		E241B3CBA85AE069A3C8C024 /* Pods_CurrencyTrading.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9383E63EF9B22E9BE774BB3 /* Pods_CurrencyTrading.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +53,9 @@
 		C34A488221B65C3400472F67 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		C34A488421B65C4500472F67 /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
 		C34A488821B7B0AF00472F67 /* MyDocsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDocsVC.swift; sourceTree = "<group>"; };
+		C34A489421B8DD8700472F67 /* TableViewCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellVC.swift; sourceTree = "<group>"; };
+		C34A489521B8DD8800472F67 /* TableViewCellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellVC.xib; sourceTree = "<group>"; };
+		C34A489821B8E84C00472F67 /* AdminDocDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDocDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,9 @@
 				C34A488221B65C3400472F67 /* BuyView.swift */,
 				C34A488421B65C4500472F67 /* SellView.swift */,
 				C34A488821B7B0AF00472F67 /* MyDocsVC.swift */,
+				C34A489421B8DD8700472F67 /* TableViewCellVC.swift */,
+				C34A489521B8DD8800472F67 /* TableViewCellVC.xib */,
+				C34A489821B8E84C00472F67 /* AdminDocDetailVC.swift */,
 			);
 			path = CurrencyTrading;
 			sourceTree = "<group>";
@@ -192,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C34A489721B8DD8800472F67 /* TableViewCellVC.xib in Resources */,
 				C34A485821B3AD6000472F67 /* LaunchScreen.storyboard in Resources */,
 				C34A485521B3AD6000472F67 /* Assets.xcassets in Resources */,
 				C34A485321B3AD5C00472F67 /* Main.storyboard in Resources */,
@@ -259,6 +269,8 @@
 				C34A488321B65C3400472F67 /* BuyView.swift in Sources */,
 				C34A486821B3D41300472F67 /* SignUpVC.swift in Sources */,
 				C34A487021B3DFB700472F67 /* VerificationToDoVC.swift in Sources */,
+				C34A489621B8DD8800472F67 /* TableViewCellVC.swift in Sources */,
+				C34A489921B8E84C00472F67 /* AdminDocDetailVC.swift in Sources */,
 				C34A486621B3C18800472F67 /* LoginVC.swift in Sources */,
 				C34A487D21B4F47800472F67 /* User.swift in Sources */,
 				C34A488921B7B0AF00472F67 /* MyDocsVC.swift in Sources */,
