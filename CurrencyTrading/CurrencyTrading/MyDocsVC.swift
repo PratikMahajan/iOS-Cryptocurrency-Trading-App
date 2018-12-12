@@ -94,7 +94,7 @@ class MyDocsVC: UIViewController, UIImagePickerControllerDelegate , UINavigation
         print (selectedImageUrl)
         var localFileName:String?
         
-        localFileName = username+".jpeg"
+        localFileName = username
 //        if let imageToUploadUrl = selectedImageUrl
 //        {
 //            let phResult = PHAsset.fetchAssets(withALAssetURLs: [imageToUploadUrl], options: nil)
@@ -210,7 +210,7 @@ class MyDocsVC: UIViewController, UIImagePickerControllerDelegate , UINavigation
     
     @IBAction func backAction(_ sender: Any) {
         
-        
+         dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

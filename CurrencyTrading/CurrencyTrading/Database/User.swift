@@ -40,7 +40,6 @@ extension User:  Codable, FetchableRecord, MutablePersistableRecord {
     
     // Add ColumnExpression to Codable's CodingKeys so that we can use them
     // as database columns.
-    //
     // See https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types
     // for more information about CodingKeys.
     private enum CodingKeys: String, CodingKey, ColumnExpression {

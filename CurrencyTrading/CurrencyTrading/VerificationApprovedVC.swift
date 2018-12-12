@@ -88,9 +88,9 @@ class VerificationApprovedVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-//        if let detailedview = segue.destination as? DetailedListVC {
-//            detailedview.vehicle = sender as! Vehicle
-//        }
+        if let detailedview = segue.destination as? AdminDocDetailVC {
+            detailedview.key = sender as! String
+        }
         
     }
     

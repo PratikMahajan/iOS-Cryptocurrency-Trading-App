@@ -18,7 +18,7 @@ class AdminDocDetailVC: UIViewController {
     var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
     let transferUtility = AWSS3TransferUtility.default()
     
-    
+    var key : String = ""
     
     func getImage(){
         
@@ -51,7 +51,7 @@ class AdminDocDetailVC: UIViewController {
         
         transferUtility.downloadData(
             fromBucket: "aedprojectvalidate",
-            key: "this",
+            key: self.key,//"this",
             expression: expression,
             completionHandler: completionHandler).continueWith { (task) -> AnyObject? in
                 if let error = task.error {
