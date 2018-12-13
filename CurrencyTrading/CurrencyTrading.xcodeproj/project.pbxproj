@@ -16,9 +16,7 @@
 		C34A486621B3C18800472F67 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486521B3C18800472F67 /* LoginVC.swift */; };
 		C34A486821B3D41300472F67 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486721B3D41300472F67 /* SignUpVC.swift */; };
 		C34A486A21B3D48100472F67 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486921B3D48100472F67 /* ForgotPasswordVC.swift */; };
-		C34A486C21B3D62C00472F67 /* TrendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486B21B3D62C00472F67 /* TrendsVC.swift */; };
 		C34A486E21B3DF9C00472F67 /* VerificationApprovedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486D21B3DF9C00472F67 /* VerificationApprovedVC.swift */; };
-		C34A487021B3DFB700472F67 /* VerificationToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486F21B3DFB700472F67 /* VerificationToDoVC.swift */; };
 		C34A487B21B4C65F00472F67 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A487A21B4C65F00472F67 /* AppDatabase.swift */; };
 		C34A487D21B4F47800472F67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A487C21B4F47800472F67 /* User.swift */; };
 		C34A488321B65C3400472F67 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A488221B65C3400472F67 /* BuyView.swift */; };
@@ -45,9 +43,7 @@
 		C34A486521B3C18800472F67 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C34A486721B3D41300472F67 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		C34A486921B3D48100472F67 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
-		C34A486B21B3D62C00472F67 /* TrendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsVC.swift; sourceTree = "<group>"; };
 		C34A486D21B3DF9C00472F67 /* VerificationApprovedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationApprovedVC.swift; sourceTree = "<group>"; };
-		C34A486F21B3DFB700472F67 /* VerificationToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationToDoVC.swift; sourceTree = "<group>"; };
 		C34A487A21B4C65F00472F67 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		C34A487C21B4F47800472F67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C34A488221B65C3400472F67 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
@@ -100,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				C34A487921B4C64F00472F67 /* Database */,
-				C34A486B21B3D62C00472F67 /* TrendsVC.swift */,
 				C34A484B21B3AD5C00472F67 /* AppDelegate.swift */,
 				C34A485121B3AD5C00472F67 /* Main.storyboard */,
 				C34A485421B3AD6000472F67 /* Assets.xcassets */,
@@ -112,7 +107,6 @@
 				C34A486721B3D41300472F67 /* SignUpVC.swift */,
 				C34A486921B3D48100472F67 /* ForgotPasswordVC.swift */,
 				C34A486D21B3DF9C00472F67 /* VerificationApprovedVC.swift */,
-				C34A486F21B3DFB700472F67 /* VerificationToDoVC.swift */,
 				C34A488221B65C3400472F67 /* BuyView.swift */,
 				C34A488421B65C4500472F67 /* SellView.swift */,
 				C34A488821B7B0AF00472F67 /* MyDocsVC.swift */,
@@ -259,7 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C34A486021B3C03F00472F67 /* ProfileVC.swift in Sources */,
-				C34A486C21B3D62C00472F67 /* TrendsVC.swift in Sources */,
 				C34A486A21B3D48100472F67 /* ForgotPasswordVC.swift in Sources */,
 				C34A488521B65C4500472F67 /* SellView.swift in Sources */,
 				C34A486221B3C10500472F67 /* TransferVC.swift in Sources */,
@@ -268,7 +261,6 @@
 				C34A484C21B3AD5C00472F67 /* AppDelegate.swift in Sources */,
 				C34A488321B65C3400472F67 /* BuyView.swift in Sources */,
 				C34A486821B3D41300472F67 /* SignUpVC.swift in Sources */,
-				C34A487021B3DFB700472F67 /* VerificationToDoVC.swift in Sources */,
 				C34A489621B8DD8800472F67 /* TableViewCellVC.swift in Sources */,
 				C34A489921B8E84C00472F67 /* AdminDocDetailVC.swift in Sources */,
 				C34A486621B3C18800472F67 /* LoginVC.swift in Sources */,

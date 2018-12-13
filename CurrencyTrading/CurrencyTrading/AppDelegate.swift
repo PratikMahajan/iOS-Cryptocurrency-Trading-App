@@ -119,6 +119,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             changeEntry(role: role)
         }
        
+        
+        
+        
+        
 
         return true
     }
