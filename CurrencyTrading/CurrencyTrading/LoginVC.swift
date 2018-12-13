@@ -172,7 +172,8 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Hide nav bar hairline
+      
         // Do any additional setup after loading the view.
         
     }
@@ -183,6 +184,8 @@ class LoginVC: UIViewController {
     }
     
 
+    
+    
     /*
     // MARK: - Navigation
 
