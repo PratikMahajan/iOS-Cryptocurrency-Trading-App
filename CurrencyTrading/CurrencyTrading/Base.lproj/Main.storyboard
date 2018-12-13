@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="958" y="-134"/>
         </scene>
         <!--Profile-->
         <scene sceneID="yYC-8m-CFa">
@@ -235,7 +235,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J3G-Nh-6f9">
                                 <rect key="frame" x="32" y="117" width="311" height="178"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="178" id="TWB-cM-d2z"/>
+                                    <constraint firstAttribute="height" constant="178" id="bNZ-qQ-oGy"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Az-Ds-WGP">
@@ -245,25 +245,32 @@
                                     <action selector="selectImageAction:" destination="mCR-6H-De7" eventType="touchUpInside" id="62S-Wp-TWV"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ID6-KW-J7r">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jQD-WU-ggX" firstAttribute="bottom" secondItem="5Az-Ds-WGP" secondAttribute="bottom" constant="184" id="2Dd-eT-AL5"/>
-                            <constraint firstItem="J3G-Nh-6f9" firstAttribute="centerY" secondItem="OVU-uB-fca" secondAttribute="centerY" id="767-WY-HbK"/>
-                            <constraint firstItem="EbW-Ug-iQv" firstAttribute="top" secondItem="jQD-WU-ggX" secondAttribute="top" id="H8H-0N-TLI"/>
-                            <constraint firstItem="EbW-Ug-iQv" firstAttribute="centerX" secondItem="OVU-uB-fca" secondAttribute="centerX" id="HPh-tM-o8Q"/>
-                            <constraint firstItem="J3G-Nh-6f9" firstAttribute="centerX" secondItem="OVU-uB-fca" secondAttribute="centerX" id="Ufw-Dy-oHG"/>
-                            <constraint firstItem="OVU-uB-fca" firstAttribute="centerX" secondItem="5Az-Ds-WGP" secondAttribute="centerX" id="Xd4-ot-DXP"/>
-                            <constraint firstItem="J3G-Nh-6f9" firstAttribute="leading" secondItem="jQD-WU-ggX" secondAttribute="leading" constant="32" id="ZyD-mo-2LK"/>
-                            <constraint firstItem="EbW-Ug-iQv" firstAttribute="leading" secondItem="cbH-K7-Mhx" secondAttribute="leading" id="cp9-9i-J3u"/>
-                            <constraint firstItem="J3G-Nh-6f9" firstAttribute="top" secondItem="EbW-Ug-iQv" secondAttribute="bottom" constant="53" id="dqh-Cw-ie3"/>
-                            <constraint firstItem="OVU-uB-fca" firstAttribute="leading" secondItem="jQD-WU-ggX" secondAttribute="leading" constant="35" id="tJj-AZ-vOS"/>
-                            <constraint firstAttribute="trailing" secondItem="EbW-Ug-iQv" secondAttribute="trailing" id="yWs-bB-4aG"/>
+                            <constraint firstItem="J3G-Nh-6f9" firstAttribute="centerX" secondItem="OVU-uB-fca" secondAttribute="centerX" id="3hx-vJ-Em7"/>
+                            <constraint firstItem="J3G-Nh-6f9" firstAttribute="leading" secondItem="jQD-WU-ggX" secondAttribute="leading" constant="32" id="7dY-hV-npJ"/>
+                            <constraint firstItem="EbW-Ug-iQv" firstAttribute="trailing" secondItem="ID6-KW-J7r" secondAttribute="trailing" id="BEF-jT-7yp"/>
+                            <constraint firstItem="EbW-Ug-iQv" firstAttribute="leading" secondItem="ID6-KW-J7r" secondAttribute="leading" id="FPK-mW-k8b"/>
+                            <constraint firstItem="EbW-Ug-iQv" firstAttribute="top" secondItem="jQD-WU-ggX" secondAttribute="top" id="Hah-I7-Bos"/>
+                            <constraint firstItem="J3G-Nh-6f9" firstAttribute="top" secondItem="ID6-KW-J7r" secondAttribute="bottom" constant="51" id="Qvy-Qg-wkb"/>
+                            <constraint firstItem="ID6-KW-J7r" firstAttribute="centerX" secondItem="OVU-uB-fca" secondAttribute="centerX" id="Vt3-T2-eE4"/>
+                            <constraint firstItem="OVU-uB-fca" firstAttribute="centerX" secondItem="5Az-Ds-WGP" secondAttribute="centerX" id="YE7-1C-gxz"/>
+                            <constraint firstItem="OVU-uB-fca" firstAttribute="leading" secondItem="jQD-WU-ggX" secondAttribute="leading" constant="35" id="aN9-eM-WJM"/>
+                            <constraint firstItem="ID6-KW-J7r" firstAttribute="top" secondItem="EbW-Ug-iQv" secondAttribute="bottom" id="dWB-bq-gxn"/>
+                            <constraint firstAttribute="trailing" secondItem="EbW-Ug-iQv" secondAttribute="trailing" id="feO-vp-vds"/>
+                            <constraint firstItem="jQD-WU-ggX" firstAttribute="bottom" secondItem="5Az-Ds-WGP" secondAttribute="bottom" constant="184" id="qYc-c8-m34"/>
+                            <constraint firstItem="EbW-Ug-iQv" firstAttribute="leading" secondItem="cbH-K7-Mhx" secondAttribute="leading" id="voj-vl-2e0"/>
+                            <constraint firstItem="J3G-Nh-6f9" firstAttribute="centerY" secondItem="OVU-uB-fca" secondAttribute="centerY" id="z7n-c5-uBB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jQD-WU-ggX"/>
                     </view>
                     <connections>
                         <outlet property="imageSelectButton" destination="5Az-Ds-WGP" id="PdC-AF-TvP"/>
+                        <outlet property="progressView" destination="ID6-KW-J7r" id="2bA-0g-NSB"/>
                         <outlet property="uploadedImage" destination="J3G-Nh-6f9" id="IGm-yc-Vux"/>
                     </connections>
                 </viewController>
@@ -808,7 +815,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSr-PV-UmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576.8" y="-1007.4962518740631"/>
+            <point key="canvasLocation" x="2001" y="-134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="o1b-7J-dvB">
@@ -839,7 +846,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gx2-gI-vQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576.8" y="-413.79310344827587"/>
+            <point key="canvasLocation" x="2001" y="439"/>
         </scene>
     </scenes>
     <resources>

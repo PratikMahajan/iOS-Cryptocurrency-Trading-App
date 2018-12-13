@@ -14,12 +14,23 @@ import Photos
 class MyDocsVC: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     @IBOutlet weak var uploadedImage: UIImageView!
     
+    @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var imageSelectButton: UIButton!
     var selectedImageUrl: URL!
     var myActivityIndicator: UIActivityIndicatorView!
     var username: String = ""
     
+    
+//
+
+    
+    
+    
     func getData(){
+        
+        
+        
+        
         do{
             try dbQueue.read { db in
                 let user = try User.fetchAll(db)
@@ -174,7 +185,7 @@ class MyDocsVC: UIViewController, UIImagePickerControllerDelegate , UINavigation
     
     func displayAlertMessage()
     {
-        let alertController = UIAlertController(title: "Alert title", message: "Image has been uploaded", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Success!", message: "Image has been uploaded", preferredStyle: .alert)
         
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
             
@@ -219,6 +230,7 @@ class MyDocsVC: UIViewController, UIImagePickerControllerDelegate , UINavigation
         setUpActivityIndicator()
         getData()
         checkPermission()
+        getImage()
         // Do any additional setup after loading the view.
     }
 
@@ -245,6 +257,80 @@ class MyDocsVC: UIViewController, UIImagePickerControllerDelegate , UINavigation
             }
 
         }
+    
+    
+    
+    
+    func getImage(){
+        
+        
+        // Configure AWS Cognito Credentials
+        let myIdentityPoolId = "us-east-1:5ffdd6d8-cf99-40ad-abd3-ecbed3610cec"
+        
+        let credentialsProvider:AWSCognitoCredentialsProvider = AWSCognitoCredentialsProvider(regionType:AWSRegionType.USEast1, identityPoolId: myIdentityPoolId)
+        
+        let configuration = AWSServiceConfiguration(region:AWSRegionType.USEast1, credentialsProvider:credentialsProvider)
+        
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+    
+    var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
+    let transferUtility = AWSS3TransferUtility.default()
+
+
+        DispatchQueue.main.async(execute: {
+            self.progressView.progress = 0
+        })
+
+        self.uploadedImage.image = nil;
+
+        let expression = AWSS3TransferUtilityDownloadExpression()
+        expression.progressBlock = {(task, progress) in
+            DispatchQueue.main.async(execute: {
+                if (self.progressView.progress < Float(progress.fractionCompleted)) {
+                    self.progressView.progress = Float(progress.fractionCompleted)
+                }
+            })
+        }
+
+
+        completionHandler = { (task, location, data, error) -> Void in
+            DispatchQueue.main.async(execute: {
+                if let error = error {
+                    NSLog("Failed with error: \(error)")
+                }
+                else{
+                    self.uploadedImage.image = UIImage(data: data!)
+                }
+            })
+        }
+
+        transferUtility.downloadData(
+            fromBucket: "aedprojectvalidate",
+            key: self.username,//"this",
+            expression: expression,
+            completionHandler: completionHandler).continueWith { (task) -> AnyObject? in
+                if let error = task.error {
+                    NSLog("Error: %@",error.localizedDescription);
+                    DispatchQueue.main.async(execute: {
+                        print ("failed")
+                    })
+                }
+
+                if let _ = task.result {
+                    DispatchQueue.main.async(execute: {
+                        print("Downloading")
+                    })
+                    NSLog("Download Starting!")
+                    // Do something with uploadTask.
+                }
+                return nil;
+        }
+
+    }
+
+    
+    
+    
     
     
     
