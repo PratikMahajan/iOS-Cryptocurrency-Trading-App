@@ -22,6 +22,37 @@ class TransferVC: UIViewController {
     var mycoins = 0.0
     var myrate = 0.0
     
+    
+    var timer = Timer()
+    var time = 0
+    
+    
+    @objc func increaseTimer(){
+        time+=1
+        //updating lable here
+        getCurrentRate()
+    }
+    
+    func startTime() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.increaseTimer), userInfo: nil, repeats: true)
+        
+    }
+    
+    func resetTimer() {
+        timer.invalidate()
+        time = 0
+    }
+    func pauseTimer() {
+        timer.invalidate()
+    }
+    
+    
+
+    
+    
+    
+    
+    
     @IBAction func selectedSegment(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
@@ -139,7 +170,43 @@ class TransferVC: UIViewController {
     
     
     
-    
+    func getCurrentRate(){
+        
+
+        let url = URL(string: "http://127.0.0.1:5050/dynamicPrice")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != 200{
+                    print ("error in getting pricing information")
+                    return
+                }
+            }
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                self.myrate = responseJSON["Price"] as! Double
+//                print (self.myrate)
+                
+                
+            }
+        }
+        
+        self.currentRate.text = "\(self.myrate)"
+        task.resume()
+        
+        
+        
+        
+        
+    }
     
     
     
@@ -150,10 +217,12 @@ class TransferVC: UIViewController {
         getInfo()
         loadCoins()
         loadMoney()
+        getCurrentRate()
         buyContainer.isHidden = false
         sellContainer.isHidden = true
         self.currentCoins.text = "\(self.mycoins)"
         self.currentBalance.text = "\(self.mybalance)"
+        self.currentRate.text = "\(self.myrate)"
         // Do any additional setup after loading the view.
     }
 
@@ -163,14 +232,21 @@ class TransferVC: UIViewController {
     }
     
     
+    override func viewDidDisappear(_ animated: Bool) {
+        resetTimer()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         getInfo()
         loadCoins()
         loadMoney()
+        getCurrentRate()
+        startTime()
         buyContainer.isHidden = false
         sellContainer.isHidden = true
         self.currentCoins.text = "\(self.mycoins)"
         self.currentBalance.text = "\(self.mybalance)"
+        self.currentRate.text = "\(self.myrate)"
     }
 
     /*
