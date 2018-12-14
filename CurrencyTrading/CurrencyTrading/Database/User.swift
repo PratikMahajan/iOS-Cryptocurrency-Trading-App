@@ -14,6 +14,8 @@ struct User {
     var username: String
     var password: String
     var role: String
+    var verify: Int
+    var balance: Double
 }
 
 // MARK: - Persistence
@@ -26,6 +28,8 @@ extension User:  Codable, FetchableRecord, MutablePersistableRecord {
         username = try values.decode(String.self, forKey: .username)
         password = try values.decode(String.self, forKey: .password)
         role = try values.decode(String.self, forKey: .role)
+        verify = try values.decode(Int.self, forKey: .verify)
+        balance = try values.decode(Double.self, forKey: .balance)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -34,6 +38,9 @@ extension User:  Codable, FetchableRecord, MutablePersistableRecord {
         try container.encode(username, forKey: .username)
         try container.encode(password, forKey: .password)
         try container.encode(role, forKey: .role)
+        try container.encode(verify, forKey: .verify)
+        try container.encode(balance, forKey: .balance)
+        
         
     }
     
@@ -43,7 +50,7 @@ extension User:  Codable, FetchableRecord, MutablePersistableRecord {
     // See https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types
     // for more information about CodingKeys.
     private enum CodingKeys: String, CodingKey, ColumnExpression {
-        case user_id, username, password, role
+        case user_id, username, password, role, verify, balance
     }
     
 // Update a player id after it has been inserted in the database.

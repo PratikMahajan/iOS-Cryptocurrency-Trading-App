@@ -42,6 +42,8 @@ struct AppDatabase {
                 t.column("password", .text).notNull()
                 
                 t.column("role", .text).notNull()
+                t.column("verify", .integer).notNull()
+                t.column("balance", .double).notNull()
                 
                 
             }

@@ -102,9 +102,12 @@ class LoginVC: UIViewController {
             if let responseJSON = responseJSON as? [String: Any] {
                 let transfer = responseJSON["role"] as! String
                 let usr = responseJSON["userid"] as! String
+                let verify = responseJSON["verify"] as! Int
+                let balance = responseJSON["balance"] as! Double
+//                print (balance)
                 self.role = transfer
                 self.k = true
-                self.insertTable(rol: transfer, uid: usr)
+                self.insertTable(rol: transfer, uid: usr, verify: verify, balance: balance)
                 
             }
         }
@@ -128,11 +131,11 @@ class LoginVC: UIViewController {
         
     }
     
-    func insertTable(rol: String, uid: String){
+    func insertTable(rol: String, uid: String, verify: Int, balance: Double){
         do{
             try dbQueue.write { db in
                 try db.execute(
-                    "insert into user values (?,?,?,?)", arguments: [uid, un, ps, rol])
+                    "insert into user values (?,?,?,?,?,?)", arguments: [uid, un, ps, rol, verify,balance])
 //                print ("inserted")
             }}
         catch{

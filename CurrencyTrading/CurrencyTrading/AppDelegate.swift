@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupDatabase(_ application: UIApplication) throws {
         let databaseURL = try FileManager.default
             .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            .appendingPathComponent("db2.sqlite")
+            .appendingPathComponent("db3.sqlite")
         dbQueue = try AppDatabase.openDatabase(atPath: databaseURL.path)
         
         // Be a nice iOS citizen, and don't consume too much memory

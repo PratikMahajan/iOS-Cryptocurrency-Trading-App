@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C315FBD221C3594B0022BFFB /* VerificationApprovedNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315FBD121C3594B0022BFFB /* VerificationApprovedNew.swift */; };
+		C315FBD421C3A7C40022BFFB /* AddBalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315FBD321C3A7C40022BFFB /* AddBalanceVC.swift */; };
 		C34A484C21B3AD5C00472F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A484B21B3AD5C00472F67 /* AppDelegate.swift */; };
 		C34A485321B3AD5C00472F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C34A485121B3AD5C00472F67 /* Main.storyboard */; };
 		C34A485521B3AD6000472F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34A485421B3AD6000472F67 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		AC26A0313F56A864DA8942C0 /* Pods-CurrencyTrading.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTrading.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTrading/Pods-CurrencyTrading.release.xcconfig"; sourceTree = "<group>"; };
 		B9383E63EF9B22E9BE774BB3 /* Pods_CurrencyTrading.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTrading.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C315FBD121C3594B0022BFFB /* VerificationApprovedNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationApprovedNew.swift; sourceTree = "<group>"; };
+		C315FBD321C3A7C40022BFFB /* AddBalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBalanceVC.swift; sourceTree = "<group>"; };
 		C34A484821B3AD5C00472F67 /* CurrencyTrading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyTrading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34A484B21B3AD5C00472F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C34A485221B3AD5C00472F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				C34A489521B8DD8800472F67 /* TableViewCellVC.xib */,
 				C34A489821B8E84C00472F67 /* AdminDocDetailVC.swift */,
 				C315FBD121C3594B0022BFFB /* VerificationApprovedNew.swift */,
+				C315FBD321C3A7C40022BFFB /* AddBalanceVC.swift */,
 			);
 			path = CurrencyTrading;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				C34A488521B65C4500472F67 /* SellView.swift in Sources */,
 				C34A486221B3C10500472F67 /* TransferVC.swift in Sources */,
 				C34A487B21B4C65F00472F67 /* AppDatabase.swift in Sources */,
+				C315FBD421C3A7C40022BFFB /* AddBalanceVC.swift in Sources */,
 				C34A486E21B3DF9C00472F67 /* VerificationApprovedVC.swift in Sources */,
 				C34A484C21B3AD5C00472F67 /* AppDelegate.swift in Sources */,
 				C34A488321B65C3400472F67 /* BuyView.swift in Sources */,
