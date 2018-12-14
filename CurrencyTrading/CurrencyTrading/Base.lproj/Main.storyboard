@@ -632,15 +632,8 @@
                                     <navigationItem title="Users" id="dWj-Cr-lwf"/>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uhM-2q-oGl">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="6Cs-X4-L6x" id="fgw-k9-QiJ"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uYw-gu-1TV">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="VUW-me-jDV">
@@ -659,16 +652,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tb2-X8-GzF" firstAttribute="trailing" secondItem="uhM-2q-oGl" secondAttribute="trailing" id="1c5-Fr-4KV"/>
-                            <constraint firstItem="tb2-X8-GzF" firstAttribute="top" secondItem="O0t-XQ-Vcc" secondAttribute="top" id="7Fi-Nc-B7N"/>
-                            <constraint firstItem="tb2-X8-GzF" firstAttribute="leading" secondItem="uhM-2q-oGl" secondAttribute="leading" id="DOG-fl-Pzo"/>
-                            <constraint firstItem="uhM-2q-oGl" firstAttribute="leading" secondItem="uYw-gu-1TV" secondAttribute="leading" id="Ehj-0C-NtB"/>
-                            <constraint firstAttribute="bottom" secondItem="uYw-gu-1TV" secondAttribute="bottom" id="TbZ-9v-rBs"/>
-                            <constraint firstItem="uhM-2q-oGl" firstAttribute="top" secondItem="tb2-X8-GzF" secondAttribute="bottom" id="VYr-be-YkM"/>
-                            <constraint firstItem="tb2-X8-GzF" firstAttribute="leading" secondItem="ngq-uS-nl5" secondAttribute="leading" id="WlY-gX-5mO"/>
-                            <constraint firstAttribute="trailing" secondItem="tb2-X8-GzF" secondAttribute="trailing" id="aNM-qR-eFd"/>
-                            <constraint firstItem="uhM-2q-oGl" firstAttribute="trailing" secondItem="uYw-gu-1TV" secondAttribute="trailing" id="b8t-vk-IVM"/>
-                            <constraint firstItem="uYw-gu-1TV" firstAttribute="top" secondItem="uhM-2q-oGl" secondAttribute="bottom" id="itE-vQ-K44"/>
+                            <constraint firstItem="tb2-X8-GzF" firstAttribute="trailing" secondItem="uYw-gu-1TV" secondAttribute="trailing" id="7SD-hw-2n4"/>
+                            <constraint firstAttribute="bottom" secondItem="uYw-gu-1TV" secondAttribute="bottom" id="9ZI-mo-aOi"/>
+                            <constraint firstItem="uYw-gu-1TV" firstAttribute="top" secondItem="tb2-X8-GzF" secondAttribute="bottom" id="AKg-w5-HSf"/>
+                            <constraint firstAttribute="trailing" secondItem="tb2-X8-GzF" secondAttribute="trailing" id="BSg-9M-s52"/>
+                            <constraint firstItem="tb2-X8-GzF" firstAttribute="leading" secondItem="uYw-gu-1TV" secondAttribute="leading" id="ORB-wd-wgr"/>
+                            <constraint firstItem="tb2-X8-GzF" firstAttribute="leading" secondItem="ngq-uS-nl5" secondAttribute="leading" id="lqT-DX-rJb"/>
+                            <constraint firstItem="tb2-X8-GzF" firstAttribute="top" secondItem="O0t-XQ-Vcc" secondAttribute="top" id="t4M-Tt-Pif"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O0t-XQ-Vcc"/>
                     </view>
@@ -682,14 +672,13 @@
                 <searchDisplayController id="gkW-V1-sMn">
                     <connections>
                         <outlet property="delegate" destination="6Cs-X4-L6x" id="bQK-uU-YVe"/>
-                        <outlet property="searchBar" destination="uhM-2q-oGl" id="iOc-qP-xtS"/>
                         <outlet property="searchContentsController" destination="6Cs-X4-L6x" id="7aY-2w-fJl"/>
                         <outlet property="searchResultsDataSource" destination="6Cs-X4-L6x" id="mBf-em-FPt"/>
                         <outlet property="searchResultsDelegate" destination="6Cs-X4-L6x" id="ncg-qN-7YC"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-695" y="2113"/>
+            <point key="canvasLocation" x="-695.20000000000005" y="2112.5937031484259"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Das-6J-Y0N">

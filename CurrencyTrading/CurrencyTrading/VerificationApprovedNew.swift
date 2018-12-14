@@ -15,19 +15,22 @@ class VerificationApprovedNew: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var table: UITableView!
     var elements : [String] = []
-    var searchResult: [String] = []
+    var finalRes: [String] = []
     var searchController = UISearchController(searchResultsController: nil )
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-            print (searchText)
-            searchResult = elements.filter { element in
+//            print (searchText)
+            elements = finalRes.filter { element in
                 return element.lowercased().contains(searchText.lowercased())
             }
             
         } else {
-            searchResult  = elements
+            print ("nothing there")
+            elements  = finalRes
         }
+//        print (elements)
+//        print (finalRes)
         table.reloadData()
     }
     
@@ -49,6 +52,7 @@ class VerificationApprovedNew: UIViewController, UITableViewDelegate, UITableVie
             for object in (task.result?.contents)! {
                 print("Object key = \(object.key!)")
                 self.elements.append(object.key!)
+                self.finalRes.append(object.key!)
             }
             return nil
         }
@@ -126,7 +130,6 @@ class VerificationApprovedNew: UIViewController, UITableViewDelegate, UITableVie
             return controller
         })()
 
-        
         
         
         
