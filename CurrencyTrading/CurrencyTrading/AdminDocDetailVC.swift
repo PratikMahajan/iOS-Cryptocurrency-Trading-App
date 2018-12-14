@@ -11,14 +11,123 @@ import AWSS3
 
 class AdminDocDetailVC: UIViewController {
 
-    @IBOutlet weak var `switch`: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var verSwitch: UISwitch!
+    
+ 
     
     var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
     let transferUtility = AWSS3TransferUtility.default()
     
     var key : String = ""
+    
+    
+    @IBAction func updateAction(_ sender: Any) {
+        
+        setVerification()
+    }
+    
+    
+    func getVerification(){
+        
+        // prepare json data
+        let json: [String: Any] = ["address": key]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        // create post request
+        let url = URL(string: "http://127.0.0.1:5000/getVerify")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != 200{
+                    print ("error in query")
+                    self.verSwitch.setOn(false, animated: true)
+                    return
+                }
+            }
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                        if let responseJSON = responseJSON as? [String: Any] {
+                            let bool = responseJSON["bool"] as! Int
+                            
+                            if bool == 1{
+                                self.verSwitch.setOn(true, animated: true)
+                            }
+                            else{
+                                self.verSwitch.setOn(false, animated: true)
+                            }
+            //                let usr = responseJSON["userid"] as! String
+                        }
+        }
+        task.resume()
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    func setVerification(){
+        var status = 0
+        if verSwitch.isOn{
+            status = 1
+        }
+        // prepare json data
+        let json: [String: Any] = ["address": key,
+                                   "bool": status]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        // create post request
+        let url = URL(string: "http://127.0.0.1:5000/setVerify")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != 200{
+                    print ("error in query")
+                    return
+                }
+            }
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+//            if let responseJSON = responseJSON as? [String: Any] {
+//                let transfer = responseJSON["role"] as! String
+//                let usr = responseJSON["userid"] as! String
+//            }
+        }
+        task.resume()
+        
+    }
+    
+    
+    
+    
     
     func getImage(){
         
@@ -75,11 +184,6 @@ class AdminDocDetailVC: UIViewController {
     
     
     
-    @IBAction func updateButton(_ sender: Any) {
-        
-        
-    }
-    
     
     
     
@@ -91,6 +195,8 @@ class AdminDocDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.verSwitch.setOn(false, animated: true)
+        getVerification()
         getImage()
 
         // Do any additional setup after loading the view.
