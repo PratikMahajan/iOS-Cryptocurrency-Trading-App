@@ -13,7 +13,14 @@ class TransferVC: UIViewController {
     @IBOutlet weak var buyContainer: UIView!
     @IBOutlet weak var sellContainer: UIView!
     
+    @IBOutlet weak var currentRate: UILabel!
+    @IBOutlet weak var currentBalance: UILabel!
+    @IBOutlet weak var currentCoins: UILabel!
     
+    var username:String = ""
+    var mybalance = 0.0
+    var mycoins = 0.0
+    var myrate = 0.0
     
     @IBAction func selectedSegment(_ sender: UISegmentedControl) {
         
@@ -31,12 +38,122 @@ class TransferVC: UIViewController {
     
     
     
+    
+    func loadMoney(){
+        
+        // prepare json data
+        let json: [String: Any] = ["address": username]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        // create post request
+        let url = URL(string: "http://127.0.0.1:5000/getBalance")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != 200{
+                    print ("error in getting money")
+                    return
+                }
+            }
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                self.mybalance = responseJSON["balance"] as! Double
+
+                
+                
+            }
+        }
+        self.currentBalance.text = "\(self.mybalance)"
+        task.resume()
+    }
+    
+    
+    func loadCoins(){
+        
+        
+        // prepare json data
+        let json: [String: Any] = ["address": username]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        // create post request
+        let url = URL(string: "http://127.0.0.1:5000/getCoins")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != 200{
+                    print ("error in getting coins")
+                    return
+                }
+            }
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                self.mycoins = responseJSON["balance"] as! Double
+                
+                
+            }
+        }
+        
+        self.currentCoins.text = "\(self.mycoins)"
+        task.resume()
+    }
+    
+    
+    func getInfo(){
+        do{
+            try dbQueue.read { db in
+                let user = try User.fetchAll(db)
+                self.username = user[0].username
+            }
+        }
+        catch{
+            print("Error in reading data")
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getInfo()
+        loadCoins()
+        loadMoney()
         buyContainer.isHidden = false
         sellContainer.isHidden = true
-        
+        self.currentCoins.text = "\(self.mycoins)"
+        self.currentBalance.text = "\(self.mybalance)"
         // Do any additional setup after loading the view.
     }
 
@@ -45,6 +162,16 @@ class TransferVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getInfo()
+        loadCoins()
+        loadMoney()
+        buyContainer.isHidden = false
+        sellContainer.isHidden = true
+        self.currentCoins.text = "\(self.mycoins)"
+        self.currentBalance.text = "\(self.mybalance)"
+    }
 
     /*
     // MARK: - Navigation
