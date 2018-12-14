@@ -1,8 +1,8 @@
 //
-//  VerificationApprovedVC.swift
+//  VerificationApprovedNew.swift
 //  CurrencyTrading
 //
-//  Created by Pratik Mahajan on 12/2/18.
+//  Created by Pratik Mahajan on 12/13/18.
 //  Copyright © 2018 Pratik Mahajan. All rights reserved.
 //
 
@@ -10,15 +10,27 @@ import UIKit
 import AWSCore
 import AWSS3
 
+class VerificationApprovedNew: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
 
-class VerificationApprovedVC: UITableViewController {
-
-    @IBOutlet var table: UITableView!
     
+    @IBOutlet weak var table: UITableView!
     var elements : [String] = []
-
+    var searchResult: [String] = []
+    var searchController = UISearchController(searchResultsController: nil )
     
-
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            print (searchText)
+            searchResult = elements.filter { element in
+                return element.lowercased().contains(searchText.lowercased())
+            }
+            
+        } else {
+            searchResult  = elements
+        }
+        table.reloadData()
+    }
+    
     
     func getS3Objects(){
         
@@ -40,19 +52,20 @@ class VerificationApprovedVC: UITableViewController {
             }
             return nil
         }
-    
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.table.reloadData()
         
     }
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return elements.count
     }
     
@@ -61,23 +74,23 @@ class VerificationApprovedVC: UITableViewController {
     }
     
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         self.performSegue(withIdentifier: "showapproveddetail", sender: elements[indexPath.row])
         
     }
     
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TableViewCellVC()
         cell.textLabel?.text = elements[indexPath.row]
-//        //        cell.imageView?.image = UIImage(named: "Image")
-//        let url = URL(string: vehicle.photo)
-//        if let data = try? Data(contentsOf: url!)
-//        {
-//            let image: UIImage = UIImage(data: data)!
-//            cell.imageView?.image = image
-//        }
+        //        //        cell.imageView?.image = UIImage(named: "Image")
+        //        let url = URL(string: vehicle.photo)
+        //        if let data = try? Data(contentsOf: url!)
+        //        {
+        //            let image: UIImage = UIImage(data: data)!
+        //            cell.imageView?.image = image
+        //        }
         return cell
         
     }
@@ -100,8 +113,20 @@ class VerificationApprovedVC: UITableViewController {
     override func viewDidLoad() {
         getS3Objects()
         super.viewDidLoad()
+        
+        self.searchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
 
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+//            Add searchbar controller in header
+            self.table.tableHeaderView = controller.searchBar
+
+            return controller
+        })()
+
+        
         
         
         
@@ -120,58 +145,13 @@ class VerificationApprovedVC: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
-
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation
