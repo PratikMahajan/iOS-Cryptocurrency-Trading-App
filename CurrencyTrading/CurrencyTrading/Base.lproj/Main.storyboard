@@ -569,6 +569,87 @@
             </objects>
             <point key="canvasLocation" x="-1124" y="2883.5082458770617"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="gbM-yB-ojX">
+            <objects>
+                <viewController id="Eja-j5-0V3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xmm-Np-lyZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXA-fo-MeB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Transactions" id="U9t-yL-8Gz">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="MBC-Sn-P4Z"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A87-pP-s53">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="991-J7-qDh">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="991-J7-qDh" id="yQi-1R-KtX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="bN0-FH-WRq" kind="show" identifier="showdetails" id="6Lx-Dn-4xG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Qja-gg-wPl"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="bX5-Ue-9Qa" id="CY9-W9-oWm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qgp-4l-i8Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="bX5-Ue-9Qa">
+                    <connections>
+                        <outlet property="delegate" destination="Eja-j5-0V3" id="90l-mD-mmS"/>
+                        <outlet property="searchContentsController" destination="Eja-j5-0V3" id="5b4-ZE-UvM"/>
+                        <outlet property="searchResultsDataSource" destination="Eja-j5-0V3" id="7tK-uy-mpQ"/>
+                        <outlet property="searchResultsDelegate" destination="Eja-j5-0V3" id="knu-CK-DwO"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="218" y="2930"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="whN-dh-Fc7">
+            <objects>
+                <viewController id="bN0-FH-WRq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C6p-3C-OF1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MNk-Or-LMg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Transaction Details" id="q0B-UO-mdy">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="eAC-YK-i36"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8LD-o1-oEY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HDy-sw-QnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1112" y="2931"/>
+        </scene>
         <!--Sign UpVC-->
         <scene sceneID="9QC-OW-5ld">
             <objects>
@@ -1070,11 +1151,11 @@
             </objects>
             <point key="canvasLocation" x="-2" y="-134"/>
         </scene>
-        <!--View Controller-->
+        <!--Buy View-->
         <scene sceneID="8UU-Nb-iHu">
             <objects>
-                <viewController id="Mst-p6-Tgt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="v1B-KW-BrQ" customClass="BuyView" customModule="CurrencyTrading">
+                <viewController id="Mst-p6-Tgt" customClass="BuyView" customModule="CurrencyTrading" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v1B-KW-BrQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="237"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1096,6 +1177,9 @@
                                     <constraint firstAttribute="width" constant="60" id="9mf-Sq-eQJ"/>
                                 </constraints>
                                 <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="buyAction:" destination="Mst-p6-Tgt" eventType="touchUpInside" id="Azo-oN-cYb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1110,16 +1194,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="19g-yM-0Ux"/>
                     </view>
+                    <connections>
+                        <outlet property="quantity" destination="egF-S8-w8f" id="yja-px-uU8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSr-PV-UmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001" y="-134"/>
         </scene>
-        <!--View Controller-->
+        <!--Sell View-->
         <scene sceneID="o1b-7J-dvB">
             <objects>
-                <viewController id="etp-0C-dhS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ibv-V9-C1p" customClass="SellView" customModule="CurrencyTrading">
+                <viewController id="etp-0C-dhS" customClass="SellView" customModule="CurrencyTrading" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ibv-V9-C1p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="237"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1141,6 +1228,9 @@
                                     <constraint firstAttribute="width" constant="60" id="toF-2q-DgK"/>
                                 </constraints>
                                 <state key="normal" title="Sell"/>
+                                <connections>
+                                    <action selector="sellAction:" destination="etp-0C-dhS" eventType="touchUpInside" id="db3-rU-Gjq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1155,6 +1245,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uft-Mk-tuS"/>
                     </view>
+                    <connections>
+                        <outlet property="quantity" destination="Wxf-Ua-4lz" id="zWH-xL-nBh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gx2-gI-vQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

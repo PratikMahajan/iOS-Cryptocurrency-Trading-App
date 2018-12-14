@@ -200,12 +200,7 @@ class TransferVC: UIViewController {
         }
         
         self.currentRate.text = "\(self.myrate)"
-        task.resume()
-        
-        
-        
-        
-        
+        task.resume()   
     }
     
     

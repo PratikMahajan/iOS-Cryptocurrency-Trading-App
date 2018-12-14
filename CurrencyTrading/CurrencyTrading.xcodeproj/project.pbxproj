@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C315FBD221C3594B0022BFFB /* VerificationApprovedNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315FBD121C3594B0022BFFB /* VerificationApprovedNew.swift */; };
 		C315FBD421C3A7C40022BFFB /* AddBalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315FBD321C3A7C40022BFFB /* AddBalanceVC.swift */; };
+		C315FBDC21C4531F0022BFFB /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315FBDB21C4531F0022BFFB /* BuyView.swift */; };
+		C315FBDE21C4534F0022BFFB /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315FBDD21C4534F0022BFFB /* SellView.swift */; };
 		C34A484C21B3AD5C00472F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A484B21B3AD5C00472F67 /* AppDelegate.swift */; };
 		C34A485321B3AD5C00472F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C34A485121B3AD5C00472F67 /* Main.storyboard */; };
 		C34A485521B3AD6000472F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34A485421B3AD6000472F67 /* Assets.xcassets */; };
@@ -21,8 +23,6 @@
 		C34A486E21B3DF9C00472F67 /* VerificationApprovedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A486D21B3DF9C00472F67 /* VerificationApprovedVC.swift */; };
 		C34A487B21B4C65F00472F67 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A487A21B4C65F00472F67 /* AppDatabase.swift */; };
 		C34A487D21B4F47800472F67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A487C21B4F47800472F67 /* User.swift */; };
-		C34A488321B65C3400472F67 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A488221B65C3400472F67 /* BuyView.swift */; };
-		C34A488521B65C4500472F67 /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A488421B65C4500472F67 /* SellView.swift */; };
 		C34A488921B7B0AF00472F67 /* MyDocsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A488821B7B0AF00472F67 /* MyDocsVC.swift */; };
 		C34A489621B8DD8800472F67 /* TableViewCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A489421B8DD8700472F67 /* TableViewCellVC.swift */; };
 		C34A489721B8DD8800472F67 /* TableViewCellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34A489521B8DD8800472F67 /* TableViewCellVC.xib */; };
@@ -36,6 +36,8 @@
 		B9383E63EF9B22E9BE774BB3 /* Pods_CurrencyTrading.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTrading.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C315FBD121C3594B0022BFFB /* VerificationApprovedNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationApprovedNew.swift; sourceTree = "<group>"; };
 		C315FBD321C3A7C40022BFFB /* AddBalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBalanceVC.swift; sourceTree = "<group>"; };
+		C315FBDB21C4531F0022BFFB /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
+		C315FBDD21C4534F0022BFFB /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
 		C34A484821B3AD5C00472F67 /* CurrencyTrading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyTrading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34A484B21B3AD5C00472F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C34A485221B3AD5C00472F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,8 +52,6 @@
 		C34A486D21B3DF9C00472F67 /* VerificationApprovedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationApprovedVC.swift; sourceTree = "<group>"; };
 		C34A487A21B4C65F00472F67 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		C34A487C21B4F47800472F67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C34A488221B65C3400472F67 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
-		C34A488421B65C4500472F67 /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
 		C34A488821B7B0AF00472F67 /* MyDocsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDocsVC.swift; sourceTree = "<group>"; };
 		C34A489421B8DD8700472F67 /* TableViewCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellVC.swift; sourceTree = "<group>"; };
 		C34A489521B8DD8800472F67 /* TableViewCellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellVC.xib; sourceTree = "<group>"; };
@@ -78,6 +78,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C315FBD621C4511F0022BFFB /* Buy&SellViews */ = {
+			isa = PBXGroup;
+			children = (
+				C315FBDB21C4531F0022BFFB /* BuyView.swift */,
+				C315FBDD21C4534F0022BFFB /* SellView.swift */,
+			);
+			path = "Buy&SellViews";
+			sourceTree = "<group>";
+		};
 		C34A483F21B3AD5C00472F67 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +108,7 @@
 		C34A484A21B3AD5C00472F67 /* CurrencyTrading */ = {
 			isa = PBXGroup;
 			children = (
+				C315FBD621C4511F0022BFFB /* Buy&SellViews */,
 				C34A487921B4C64F00472F67 /* Database */,
 				C34A484B21B3AD5C00472F67 /* AppDelegate.swift */,
 				C34A485121B3AD5C00472F67 /* Main.storyboard */,
@@ -111,8 +121,6 @@
 				C34A486721B3D41300472F67 /* SignUpVC.swift */,
 				C34A486921B3D48100472F67 /* ForgotPasswordVC.swift */,
 				C34A486D21B3DF9C00472F67 /* VerificationApprovedVC.swift */,
-				C34A488221B65C3400472F67 /* BuyView.swift */,
-				C34A488421B65C4500472F67 /* SellView.swift */,
 				C34A488821B7B0AF00472F67 /* MyDocsVC.swift */,
 				C34A489421B8DD8700472F67 /* TableViewCellVC.swift */,
 				C34A489521B8DD8800472F67 /* TableViewCellVC.xib */,
@@ -260,19 +268,19 @@
 			files = (
 				C34A486021B3C03F00472F67 /* ProfileVC.swift in Sources */,
 				C34A486A21B3D48100472F67 /* ForgotPasswordVC.swift in Sources */,
-				C34A488521B65C4500472F67 /* SellView.swift in Sources */,
 				C34A486221B3C10500472F67 /* TransferVC.swift in Sources */,
 				C34A487B21B4C65F00472F67 /* AppDatabase.swift in Sources */,
+				C315FBDE21C4534F0022BFFB /* SellView.swift in Sources */,
 				C315FBD421C3A7C40022BFFB /* AddBalanceVC.swift in Sources */,
 				C34A486E21B3DF9C00472F67 /* VerificationApprovedVC.swift in Sources */,
 				C34A484C21B3AD5C00472F67 /* AppDelegate.swift in Sources */,
-				C34A488321B65C3400472F67 /* BuyView.swift in Sources */,
 				C34A486821B3D41300472F67 /* SignUpVC.swift in Sources */,
 				C34A489621B8DD8800472F67 /* TableViewCellVC.swift in Sources */,
 				C315FBD221C3594B0022BFFB /* VerificationApprovedNew.swift in Sources */,
 				C34A489921B8E84C00472F67 /* AdminDocDetailVC.swift in Sources */,
 				C34A486621B3C18800472F67 /* LoginVC.swift in Sources */,
 				C34A487D21B4F47800472F67 /* User.swift in Sources */,
+				C315FBDC21C4531F0022BFFB /* BuyView.swift in Sources */,
 				C34A488921B7B0AF00472F67 /* MyDocsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
