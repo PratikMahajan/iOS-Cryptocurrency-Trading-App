@@ -17,6 +17,9 @@ class AllTransactionsVC: UIViewController, UITableViewDelegate, UITableViewDataS
     var searchController = UISearchController(searchResultsController: nil )
     var username = ""
     
+    var transactions : [TransactionData] = []
+    
+    
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
             //            print (searchText)
@@ -76,11 +79,20 @@ class AllTransactionsVC: UIViewController, UITableViewDelegate, UITableViewDataS
                 return
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            print (responseJSON)
-            if let responseJSON = responseJSON as? [String: Any] {
-//                let transfer = responseJSON["role"] as! String
-                print (responseJSON)
-                
+            for ele in responseJSON as! NSArray{
+                if let responseJSON = ele as? [String: Any] {
+                    //                let transfer = responseJSON["role"] as! String
+                   let from = responseJSON["from"] as! String
+                   let to = responseJSON["to"] as! String
+                    let quantity = responseJSON["quantity"] as! Int
+                    let price = responseJSON["price"] as! Double
+                    self.transactions.append(TransactionData(from: from, to: to, quantity: quantity, price: price))
+                    
+                    var data = "From: "+from+" To: "+to
+                    self.elements.append(data)
+                    
+            }
+            
             }
         }
         task.resume()
@@ -107,7 +119,7 @@ class AllTransactionsVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        self.performSegue(withIdentifier: "showapproveddetail", sender: elements[indexPath.row])
+        self.performSegue(withIdentifier: "showdetails", sender: transactions[indexPath.row])
         
     }
     
@@ -133,8 +145,8 @@ class AllTransactionsVC: UIViewController, UITableViewDelegate, UITableViewDataS
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if let detailedview = segue.destination as? AdminDocDetailVC {
-            detailedview.key = sender as! String
+        if let detailedview = segue.destination as? TrnasactionDetailsVC {
+            detailedview.key = sender as! TransactionData
         }
         
     }
@@ -145,6 +157,7 @@ class AllTransactionsVC: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         getData()
         getObjects()
+        
         super.viewDidLoad()
         
         self.searchController = ({
