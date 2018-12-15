@@ -12,6 +12,12 @@ class BuyView: UIViewController {
 
     @IBOutlet weak var quantity: UITextField!
     var amount : Double = 0.0
+    var myrate = 0.0
+    
+    var mybalance = 0.0
+    var mycoins = 0.0
+    
+    
     
     @IBAction func buyAction(_ sender: Any) {
         buyCoins()
@@ -77,27 +83,14 @@ class BuyView: UIViewController {
     }
     
     
-    
-    
-    
-    
-    func buyCoins(){
+    func loadMoney(){
+        
         // prepare json data
-        
-        let rate = getCurrentRate()
-        let username = getUsername()
-        let quant = getQuantity()
-        
-        if quant == 0{
-            return
-        }
-        let json: [String: Any] = ["address": username,
-                                   "quantity": quant,
-                                   "amount": rate]
+        let json: [String: Any] = ["address": getUsername()]
         
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         // create post request
-        let url = URL(string: "http://127.0.0.1:5050/buy")!
+        let url = URL(string: "http://127.0.0.1:5000/getBalance")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -110,7 +103,7 @@ class BuyView: UIViewController {
             
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode != 200{
-                    print ("failed sell")
+                    print ("error in getting money")
                     return
                 }
             }
@@ -121,11 +114,78 @@ class BuyView: UIViewController {
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
-                self.sendAlert()
+                self.mybalance = responseJSON["balance"] as! Double
+                
+                
                 
             }
         }
         task.resume()
+    }
+    
+    
+    
+    func buyCoins(){
+        // prepare json data
+        loadMoney()
+        var rate = 0.0
+        rate = self.getCurrentRate()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            let username = self.getUsername()
+            let quant = self.getQuantity()
+            let totalamt = Double(quant) * self.myrate
+            if self.mybalance < (totalamt) {
+                let alert = UIAlertController(title: "ALERT", message: "Insufficient Balance", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+                self.quantity.text = ""
+                return
+            }
+            
+            
+            if quant == 0{
+                return
+            }
+            let json: [String: Any] = ["address": username,
+                                       "quantity": quant,
+                                       "amount": self.myrate]
+            
+            let jsonData = try? JSONSerialization.data(withJSONObject: json)
+            // create post request
+            let url = URL(string: "http://127.0.0.1:5050/buy")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            // insert json data to the request
+            request.httpBody = jsonData
+            
+            
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                
+                if let httpResponse = response as? HTTPURLResponse {
+                    if httpResponse.statusCode != 200{
+                        print ("failed sell")
+                        return
+                    }
+                }
+                
+                guard let data = data, error == nil else {
+                    print(error?.localizedDescription ?? "No data")
+                    return
+                }
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let responseJSON = responseJSON as? [String: Any] {
+                    self.sendAlert()
+                    
+                }
+            }
+            self.sendAlert()
+            task.resume()
+        }
+        
+        
     }
     
     
@@ -134,6 +194,7 @@ class BuyView: UIViewController {
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
+        quantity.text = ""
         return
     }
     
@@ -162,7 +223,7 @@ class BuyView: UIViewController {
             if let responseJSON = responseJSON as? [String: Any] {
                 self.amount = responseJSON["Price"] as! Double
                 rate = responseJSON["Price"] as! Double
-                
+                self.myrate = rate
                 
             }
         }

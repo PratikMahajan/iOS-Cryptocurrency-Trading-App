@@ -31,6 +31,11 @@ class TransferVC: UIViewController {
         time+=1
         //updating lable here
         getCurrentRate()
+        
+        if (time == 2){
+            loadCoins()
+            loadMoney()
+        }
     }
     
     func startTime() {
