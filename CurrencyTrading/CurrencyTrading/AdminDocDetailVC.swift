@@ -16,7 +16,7 @@ class AdminDocDetailVC: UIViewController {
     @IBOutlet weak var verSwitch: UISwitch!
     @IBOutlet weak var navBar: UINavigationBar!
     
- 
+    
     
     var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
     let transferUtility = AWSS3TransferUtility.default()
@@ -213,7 +213,7 @@ class AdminDocDetailVC: UIViewController {
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
-
+        navBar.topItem?.title  = key
         // Do any additional setup after loading the view.
     }
 

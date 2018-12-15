@@ -10,9 +10,11 @@ import UIKit
 
 class SellView: UIViewController {
 
+    @IBOutlet weak var sellBtn: UIButton!
     @IBOutlet weak var quantity: UITextField!
     var myrate = 0.0
     var mycoins = 0.0
+    var verified = 0
     @IBAction func sellAction(_ sender: Any) {
         
         sellCoins()
@@ -207,7 +209,18 @@ class SellView: UIViewController {
     }
     
     
-    
+    func getVerification(){
+        do{
+            try dbQueue.read { db in
+                let user = try User.fetchAll(db)
+                self.verified = user[0].verify
+                
+            }
+        }
+        catch{
+            print("Error in reading data")
+        }
+    }
     
     
     
@@ -346,8 +359,23 @@ class SellView: UIViewController {
     
     
     override func viewDidLoad() {
+        
+        getVerification()
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        sellBtn.layer.cornerRadius = 15
+        sellBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        
+        if verified == 1{
+            sellBtn.isEnabled = true
+        }
+        else{
+            sellBtn.isEnabled = false
+        }
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 

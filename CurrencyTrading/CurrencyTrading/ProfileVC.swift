@@ -13,6 +13,8 @@ import AWSS3
 
 class ProfileVC: UIViewController {
 
+    @IBOutlet weak var signoutBtn: UIButton!
+    @IBOutlet weak var addBalBtn: UIButton!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -60,6 +62,12 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         getData()
         loginCheck()
+        
+        addBalBtn.layer.cornerRadius = 15
+        addBalBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        
+        signoutBtn.layer.cornerRadius = 15
+        signoutBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         
         profileImage.layer.masksToBounds = true
         profileImage.layer.cornerRadius = 78.5

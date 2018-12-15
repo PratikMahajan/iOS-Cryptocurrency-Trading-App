@@ -16,8 +16,9 @@ class BuyView: UIViewController {
     
     var mybalance = 0.0
     var mycoins = 0.0
+    @IBOutlet weak var butBtn: UIButton!
     
-    
+    var verified = 0
     
     @IBAction func buyAction(_ sender: Any) {
         buyCoins()
@@ -196,6 +197,25 @@ class BuyView: UIViewController {
     }
     
     
+    
+    
+    func getVerification(){
+        do{
+            try dbQueue.read { db in
+                let user = try User.fetchAll(db)
+                self.verified = user[0].verify
+                
+            }
+        }
+        catch{
+            print("Error in reading data")
+        }
+    }
+    
+    
+    
+    
+    
     func loadMoney(){
         
         // prepare json data
@@ -352,8 +372,20 @@ class BuyView: UIViewController {
     
     
     override func viewDidLoad() {
+        getVerification()
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
+        butBtn.layer.cornerRadius = 15
+        butBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        if verified == 1{
+            butBtn.isEnabled = true
+        }
+        else{
+            butBtn.isEnabled = false
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
 

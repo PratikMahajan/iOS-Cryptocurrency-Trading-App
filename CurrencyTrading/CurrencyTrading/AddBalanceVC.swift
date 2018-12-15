@@ -16,6 +16,7 @@ class AddBalanceVC: UIViewController {
     @IBOutlet weak var mm: UITextField!
     @IBOutlet weak var dd: UITextField!
     @IBOutlet weak var amount: UITextField!
+    @IBOutlet weak var addMoneyBtn: UIButton!
     
     @IBOutlet weak var navBar: UINavigationBar!
     var username : String = ""
@@ -318,6 +319,10 @@ class AddBalanceVC: UIViewController {
         
         navBar.barTintColor = UIColor(patternImage: UIImage(named: "background.png")!)
         navBar.isTranslucent = true;
+        
+        
+        addMoneyBtn.layer.cornerRadius = 15
+        addMoneyBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         // Do any additional setup after loading the view.
     }
 

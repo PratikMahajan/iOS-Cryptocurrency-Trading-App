@@ -14,6 +14,7 @@ import Photos
 class MyDocsVC: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     @IBOutlet weak var uploadedImage: UIImageView!
     
+    @IBOutlet weak var uploadBtn: UIButton!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var imageSelectButton: UIButton!
@@ -232,7 +233,8 @@ class MyDocsVC: UIViewController, UIImagePickerControllerDelegate , UINavigation
         getData()
         checkPermission()
         getImage()
-        
+        uploadBtn.layer.cornerRadius = 15
+        uploadBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         
         navBar.barTintColor = UIColor(patternImage: UIImage(named: "background.png")!)
         navBar.isTranslucent = true;

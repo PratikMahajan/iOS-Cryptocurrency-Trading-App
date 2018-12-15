@@ -13,6 +13,7 @@ import AWSS3
 class VerificationApprovedNew: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
 
     
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var table: UITableView!
     var elements : [String] = []
     var finalRes: [String] = []
@@ -117,6 +118,12 @@ class VerificationApprovedNew: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         getS3Objects()
         super.viewDidLoad()
+        
+        navBar.barTintColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        navBar.isTranslucent = true;
+        table.backgroundView = UIImageView(image: UIImage(named: "background.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
         
         self.searchController = ({
             let controller = UISearchController(searchResultsController: nil)
