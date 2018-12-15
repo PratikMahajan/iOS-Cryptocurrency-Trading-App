@@ -15,6 +15,8 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var fnameTxt: UITextField!
     @IBOutlet weak var lnameTxt: UITextField!
+    @IBOutlet weak var register: UIButton!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     var utype: String = "Error"
     var umessage: String = "Error in Signup"
@@ -159,8 +161,27 @@ class SignUpVC: UIViewController {
         super.viewDidLoad()
 
        
+        register.layer.cornerRadius = 15
+        register.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        
+        usernameTxt.borderStyle = UITextBorderStyle.roundedRect
+        passwordTxt.borderStyle = UITextBorderStyle.roundedRect
+        emailTxt.borderStyle = UITextBorderStyle.roundedRect
+        fnameTxt.borderStyle = UITextBorderStyle.roundedRect
+        lnameTxt.borderStyle = UITextBorderStyle.roundedRect
+        
+        navBar.barTintColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        navBar.isTranslucent = true;
+        
+//        if let sb = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView {
+//            sb.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
+//            // if you prefer a light gray under there...
+//            //sb.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
+//        }
         
         
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         // Do any additional setup after loading the view.
     }
 

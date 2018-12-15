@@ -22,6 +22,7 @@ class LoginVC: UIViewController {
     
     @IBOutlet weak var signup: UIButton!
     
+    @IBOutlet weak var forgotPass: UIButton!
     
     
     @IBAction func signInAction(_ sender: Any) {
@@ -189,12 +190,23 @@ class LoginVC: UIViewController {
         signup.layer.cornerRadius = 15
         signup.titleLabel?.font = UIFont.systemFont(ofSize: 14)
       
-        
+        forgotPass.layer.cornerRadius = 15
+        forgotPass.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         
         
         usernameTxt.borderStyle = UITextBorderStyle.roundedRect
         passwordTxt.borderStyle = UITextBorderStyle.roundedRect
         // Do any additional setup after loading the view.
+        
+        
+        
+        
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
+        
+        
+        
         
     }
 
