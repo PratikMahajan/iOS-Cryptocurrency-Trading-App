@@ -64,17 +64,17 @@ class ProfileVC: UIViewController {
         profileImage.layer.cornerRadius = 78.5
         profileImage.clipsToBounds = true
         
-        let url = URL(string: "https://ui-avatars.com/api/?size=512&background=0D8ABC&color=fff&name=Pratik+Mahajan")
+    
+        let url = URL(string: "https://ui-avatars.com/api/?size=512&background=0D8ABC&color=fff&name="+username)
         if let data = try? Data(contentsOf: url!)
         {
             let img: UIImage = UIImage(data: data)!
             profileImage.image = img
         }
-//        print (fname+"--"+lname)
+        
         userName?.text = username
         nameData?.text = fname+" "+lname
         emailData?.text = email
-        
         
         // Do any additional setup after loading the view.
     }
