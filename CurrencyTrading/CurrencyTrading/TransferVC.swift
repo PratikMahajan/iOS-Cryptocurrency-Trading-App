@@ -12,6 +12,7 @@ class TransferVC: UIViewController {
 
     @IBOutlet weak var buyContainer: UIView!
     @IBOutlet weak var sellContainer: UIView!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     @IBOutlet weak var currentRate: UILabel!
     @IBOutlet weak var currentBalance: UILabel!
@@ -221,6 +222,7 @@ class TransferVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         getInfo()
         loadCoins()
         loadMoney()
@@ -230,6 +232,10 @@ class TransferVC: UIViewController {
         self.currentCoins.text = "\(self.mycoins)"
         self.currentBalance.text = "\(self.mybalance)"
         self.currentRate.text = "\(self.myrate)"
+        
+        
+        navBar.barTintColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        navBar.isTranslucent = true;
         // Do any additional setup after loading the view.
     }
 

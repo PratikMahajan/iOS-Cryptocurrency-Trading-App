@@ -13,6 +13,7 @@ import AWSS3
 
 class ProfileVC: UIViewController {
 
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     var username: String = ""
@@ -64,7 +65,7 @@ class ProfileVC: UIViewController {
         profileImage.layer.cornerRadius = 78.5
         profileImage.clipsToBounds = true
         
-    
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         let url = URL(string: "https://ui-avatars.com/api/?size=512&background=0D8ABC&color=fff&name="+username)
         if let data = try? Data(contentsOf: url!)
         {
@@ -75,6 +76,9 @@ class ProfileVC: UIViewController {
         userName?.text = username
         nameData?.text = fname+" "+lname
         emailData?.text = email
+        
+        navBar.barTintColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        navBar.isTranslucent = true;
         
         // Do any additional setup after loading the view.
     }

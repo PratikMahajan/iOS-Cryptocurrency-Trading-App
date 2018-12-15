@@ -17,6 +17,7 @@ class AddBalanceVC: UIViewController {
     @IBOutlet weak var dd: UITextField!
     @IBOutlet weak var amount: UITextField!
     
+    @IBOutlet weak var navBar: UINavigationBar!
     var username : String = ""
     
     @IBOutlet weak var AddAction: UIButton!
@@ -313,7 +314,10 @@ class AddBalanceVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getInfo()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
+        navBar.barTintColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        navBar.isTranslucent = true;
         // Do any additional setup after loading the view.
     }
 

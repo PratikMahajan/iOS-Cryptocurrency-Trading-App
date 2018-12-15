@@ -121,6 +121,7 @@
                         <outlet property="currentBalance" destination="ndg-wV-Cmp" id="Y19-im-Rsv"/>
                         <outlet property="currentCoins" destination="EU1-X6-bTn" id="xQm-KE-MgP"/>
                         <outlet property="currentRate" destination="7Fz-bn-x66" id="FB2-ya-B0Y"/>
+                        <outlet property="navBar" destination="kqf-0j-8Jt" id="UnV-Ab-zHM"/>
                         <outlet property="sellContainer" destination="J3J-11-Dea" id="3Jk-YV-38h"/>
                     </connections>
                 </viewController>
@@ -253,6 +254,7 @@
                     <connections>
                         <outlet property="emailData" destination="9N2-JH-Naj" id="VwV-LZ-0I5"/>
                         <outlet property="nameData" destination="Swl-7E-Awr" id="hjW-Lw-Vx0"/>
+                        <outlet property="navBar" destination="KIP-ce-hwY" id="9ae-ms-38w"/>
                         <outlet property="profileImage" destination="gbh-LU-UsA" id="4lC-DG-GQE"/>
                         <outlet property="userName" destination="R6H-5Y-kbZ" id="SGN-zy-M4v"/>
                     </connections>
@@ -328,6 +330,7 @@
                     </view>
                     <connections>
                         <outlet property="imageSelectButton" destination="5Az-Ds-WGP" id="PdC-AF-TvP"/>
+                        <outlet property="navBar" destination="EbW-Ug-iQv" id="5Pb-Qs-y3N"/>
                         <outlet property="progressView" destination="ID6-KW-J7r" id="2bA-0g-NSB"/>
                         <outlet property="uploadedImage" destination="J3G-Nh-6f9" id="IGm-yc-Vux"/>
                     </connections>
@@ -483,6 +486,7 @@
                         <outlet property="dd" destination="sAY-Eo-Wa6" id="SkT-cG-tT6"/>
                         <outlet property="mm" destination="XEb-Dd-Lq9" id="Tu8-Zd-M29"/>
                         <outlet property="name" destination="Bs8-bU-21h" id="QvK-Tr-shk"/>
+                        <outlet property="navBar" destination="bP6-pC-34z" id="4mb-SZ-Cz3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8T-c3-zNB" userLabel="First Responder" sceneMemberID="firstResponder"/>

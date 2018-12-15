@@ -14,6 +14,7 @@ import Photos
 class MyDocsVC: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     @IBOutlet weak var uploadedImage: UIImageView!
     
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var imageSelectButton: UIButton!
     var selectedImageUrl: URL!
@@ -226,11 +227,15 @@ class MyDocsVC: UIViewController, UIImagePickerControllerDelegate , UINavigation
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         setUpActivityIndicator()
         getData()
         checkPermission()
         getImage()
+        
+        
+        navBar.barTintColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        navBar.isTranslucent = true;
         // Do any additional setup after loading the view.
     }
 
