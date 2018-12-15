@@ -569,26 +569,22 @@
             </objects>
             <point key="canvasLocation" x="-1124" y="2883.5082458770617"/>
         </scene>
-        <!--View Controller-->
+        <!--Transactions-->
         <scene sceneID="gbM-yB-ojX">
             <objects>
-                <viewController id="Eja-j5-0V3" sceneMemberID="viewController">
+                <viewController id="Eja-j5-0V3" customClass="AllTransactionsVC" customModule="CurrencyTrading" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xmm-Np-lyZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXA-fo-MeB">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXA-fo-MeB">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Transactions" id="U9t-yL-8Gz">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="MBC-Sn-P4Z"/>
-                                    </navigationItem>
+                                    <navigationItem title="Transactions" id="U9t-yL-8Gz"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A87-pP-s53">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A87-pP-s53">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="991-J7-qDh">
@@ -606,10 +602,21 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SXA-fo-MeB" firstAttribute="top" secondItem="Qja-gg-wPl" secondAttribute="top" id="0Mh-rj-05b"/>
+                            <constraint firstItem="SXA-fo-MeB" firstAttribute="leading" secondItem="Xmm-Np-lyZ" secondAttribute="leading" id="5nW-Hp-Ofu"/>
+                            <constraint firstItem="SXA-fo-MeB" firstAttribute="trailing" secondItem="A87-pP-s53" secondAttribute="trailing" id="H5n-ap-Bzm"/>
+                            <constraint firstAttribute="bottom" secondItem="A87-pP-s53" secondAttribute="bottom" id="Qix-9K-gmh"/>
+                            <constraint firstItem="A87-pP-s53" firstAttribute="top" secondItem="SXA-fo-MeB" secondAttribute="bottom" id="VC7-6N-D9V"/>
+                            <constraint firstItem="SXA-fo-MeB" firstAttribute="leading" secondItem="A87-pP-s53" secondAttribute="leading" id="Vtp-Z3-nDG"/>
+                            <constraint firstAttribute="trailing" secondItem="SXA-fo-MeB" secondAttribute="trailing" id="Yj6-Zy-hGm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Qja-gg-wPl"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Transactions" id="RsH-a6-ftS"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="bX5-Ue-9Qa" id="CY9-W9-oWm"/>
+                        <outlet property="table" destination="A87-pP-s53" id="O8O-Yy-FpA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgp-4l-i8Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -622,7 +629,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="218" y="2930"/>
+            <point key="canvasLocation" x="-2" y="-1145"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="whN-dh-Fc7">
@@ -648,7 +655,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HDy-sw-QnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="2931"/>
+            <point key="canvasLocation" x="892" y="-1144"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="9QC-OW-5ld">
@@ -1145,6 +1152,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="pcn-n8-NZP" kind="relationship" relationship="viewControllers" id="6PO-HS-N0L"/>
+                        <segue destination="Eja-j5-0V3" kind="relationship" relationship="viewControllers" id="Qe5-vf-fvF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

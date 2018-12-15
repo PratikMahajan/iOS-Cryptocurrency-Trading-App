@@ -11,6 +11,7 @@
 		C315FBD421C3A7C40022BFFB /* AddBalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315FBD321C3A7C40022BFFB /* AddBalanceVC.swift */; };
 		C315FBDC21C4531F0022BFFB /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315FBDB21C4531F0022BFFB /* BuyView.swift */; };
 		C315FBDE21C4534F0022BFFB /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315FBDD21C4534F0022BFFB /* SellView.swift */; };
+		C315FBE021C48FF30022BFFB /* AllTransactionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C315FBDF21C48FF30022BFFB /* AllTransactionsVC.swift */; };
 		C34A484C21B3AD5C00472F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A484B21B3AD5C00472F67 /* AppDelegate.swift */; };
 		C34A485321B3AD5C00472F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C34A485121B3AD5C00472F67 /* Main.storyboard */; };
 		C34A485521B3AD6000472F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34A485421B3AD6000472F67 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		C315FBD321C3A7C40022BFFB /* AddBalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBalanceVC.swift; sourceTree = "<group>"; };
 		C315FBDB21C4531F0022BFFB /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		C315FBDD21C4534F0022BFFB /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
+		C315FBDF21C48FF30022BFFB /* AllTransactionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTransactionsVC.swift; sourceTree = "<group>"; };
 		C34A484821B3AD5C00472F67 /* CurrencyTrading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyTrading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34A484B21B3AD5C00472F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C34A485221B3AD5C00472F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				C34A489821B8E84C00472F67 /* AdminDocDetailVC.swift */,
 				C315FBD121C3594B0022BFFB /* VerificationApprovedNew.swift */,
 				C315FBD321C3A7C40022BFFB /* AddBalanceVC.swift */,
+				C315FBDF21C48FF30022BFFB /* AllTransactionsVC.swift */,
 			);
 			path = CurrencyTrading;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				C34A486221B3C10500472F67 /* TransferVC.swift in Sources */,
 				C34A487B21B4C65F00472F67 /* AppDatabase.swift in Sources */,
 				C315FBDE21C4534F0022BFFB /* SellView.swift in Sources */,
+				C315FBE021C48FF30022BFFB /* AllTransactionsVC.swift in Sources */,
 				C315FBD421C3A7C40022BFFB /* AddBalanceVC.swift in Sources */,
 				C34A486E21B3DF9C00472F67 /* VerificationApprovedVC.swift in Sources */,
 				C34A484C21B3AD5C00472F67 /* AppDelegate.swift in Sources */,
