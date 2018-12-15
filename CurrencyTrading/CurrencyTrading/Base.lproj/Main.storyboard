@@ -613,7 +613,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qja-gg-wPl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Transactions" id="RsH-a6-ftS"/>
+                    <tabBarItem key="tabBarItem" title="Transactions" image="transactions" landscapeImage="transactions" largeContentSizeImage="transactions" id="RsH-a6-ftS"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="bX5-Ue-9Qa" id="CY9-W9-oWm"/>
                         <outlet property="table" destination="A87-pP-s53" id="O8O-Yy-FpA"/>
@@ -1350,6 +1350,7 @@
     <resources>
         <image name="Profile" width="16" height="16"/>
         <image name="logo" width="300" height="94"/>
+        <image name="transactions" width="16" height="16"/>
         <image name="transfer" width="16" height="16"/>
         <image name="user" width="16" height="16"/>
     </resources>
