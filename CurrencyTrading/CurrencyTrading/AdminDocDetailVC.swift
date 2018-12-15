@@ -14,6 +14,7 @@ class AdminDocDetailVC: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var verSwitch: UISwitch!
+    @IBOutlet weak var navBar: UINavigationBar!
     
  
     
@@ -198,6 +199,20 @@ class AdminDocDetailVC: UIViewController {
         self.verSwitch.setOn(false, animated: true)
         getVerification()
         getImage()
+        
+        navBar.barTintColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        navBar.isTranslucent = true;
+        
+        //        if let sb = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView {
+        //            sb.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
+        //            // if you prefer a light gray under there...
+        //            //sb.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
+        //        }
+        
+        
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
 
         // Do any additional setup after loading the view.
     }

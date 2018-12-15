@@ -565,6 +565,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Gzx-un-d74" id="GQG-Q3-lRB"/>
+                        <outlet property="navBar" destination="kMe-sW-0QJ" id="mNN-hu-Qzx"/>
                         <outlet property="progressView" destination="okS-yl-TVb" id="3rk-c3-gPm"/>
                         <outlet property="verSwitch" destination="Bnn-ls-uR4" id="mts-Rd-8rb"/>
                     </connections>
@@ -620,6 +621,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Transactions" image="transactions" landscapeImage="transactions" largeContentSizeImage="transactions" id="RsH-a6-ftS"/>
                     <connections>
+                        <outlet property="navBar" destination="SXA-fo-MeB" id="gNM-Cw-VT9"/>
                         <outlet property="searchDisplayController" destination="bX5-Ue-9Qa" id="CY9-W9-oWm"/>
                         <outlet property="table" destination="A87-pP-s53" id="O8O-Yy-FpA"/>
                     </connections>

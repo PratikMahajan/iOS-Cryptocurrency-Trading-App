@@ -11,6 +11,7 @@ import UIKit
 class AllTransactionsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
 
     
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var table: UITableView!
     var elements : [String] = []
     var finalRes: [String] = []
@@ -159,6 +160,12 @@ class AllTransactionsVC: UIViewController, UITableViewDelegate, UITableViewDataS
         getObjects()
         
         super.viewDidLoad()
+        
+        navBar.barTintColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        navBar.isTranslucent = true;
+        table.backgroundView = UIImageView(image: UIImage(named: "background.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
         
         self.searchController = ({
             let controller = UISearchController(searchResultsController: nil)
