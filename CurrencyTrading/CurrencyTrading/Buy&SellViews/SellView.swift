@@ -20,6 +20,69 @@ class SellView: UIViewController {
     }
     
     
+    
+    
+    
+    func addMoney(amount: Double){
+        // prepare json data
+        let json: [String: Any] = ["address": getUsername(),
+                                   "amount": amount]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        // create post request
+        let url = URL(string: "http://127.0.0.1:5000/addMoney")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != 200{
+                    print ("error in adding money")
+                    return
+                }
+            }
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                let newBal = responseJSON["balance"] as! Double
+                self.Insert(balance: newBal)
+                
+                
+            }
+        }
+        task.resume()
+    }
+    
+    
+    func Insert(balance:Double){
+        do{
+            try dbQueue.write { db in
+                try db.execute(
+                    "update user set balance = \(balance)")
+                print ("added")
+            }}
+        catch{
+            print ("not added")
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     func getQuantity() -> Int{
         
         let quantval = quantity.text
@@ -105,6 +168,47 @@ class SellView: UIViewController {
     
     
     
+    func addCoins(amount: Int){
+        // prepare json data
+        let json: [String: Any] = ["address": getUsername(),
+                                   "amount": amount]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        // create post request
+        let url = URL(string: "http://127.0.0.1:5000/addCoins")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != 200{
+                    print ("error in adding money")
+                    return
+                }
+            }
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                
+                
+            }
+        }
+        task.resume()
+    }
+    
+    
+    
+    
     
     
     
@@ -130,6 +234,9 @@ class SellView: UIViewController {
                 return
             }
             
+            var finalamt = Double(quant) * self.myrate
+            self.addMoney(amount: finalamt)
+            self.addCoins(amount: quant * -1)
             
             let json: [String: Any] = ["address": username,
                                        "quantity": quant,

@@ -36,6 +36,13 @@ class TransferVC: UIViewController {
             loadCoins()
             loadMoney()
         }
+        
+        if (time % 5 == 0){
+            loadCoins()
+            loadMoney()
+        }
+        
+        
     }
     
     func startTime() {
