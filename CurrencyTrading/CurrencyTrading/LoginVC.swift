@@ -17,6 +17,13 @@ class LoginVC: UIViewController {
     var un : String = ""
     var ps : String = ""
     var k : Bool = true
+    
+    @IBOutlet weak var signin: UIButton!
+    
+    @IBOutlet weak var signup: UIButton!
+    
+    
+    
     @IBAction func signInAction(_ sender: Any) {
         un = usernameTxt.text!
         ps = passwordTxt.text!
@@ -176,7 +183,17 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Hide nav bar hairline
+        signin.layer.cornerRadius = 15
+        signin.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        
+        signup.layer.cornerRadius = 15
+        signup.titleLabel?.font = UIFont.systemFont(ofSize: 14)
       
+        
+        
+        
+        usernameTxt.borderStyle = UITextBorderStyle.roundedRect
+        passwordTxt.borderStyle = UITextBorderStyle.roundedRect
         // Do any additional setup after loading the view.
         
     }
