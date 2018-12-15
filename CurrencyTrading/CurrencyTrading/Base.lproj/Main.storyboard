@@ -786,6 +786,7 @@
                     </view>
                     <connections>
                         <outlet property="fromval" destination="0GD-Wh-f0e" id="KLz-VM-gda"/>
+                        <outlet property="navBar" destination="MNk-Or-LMg" id="vcd-Dg-evg"/>
                         <outlet property="quantityval" destination="5js-wX-gcz" id="jIb-wr-5iv"/>
                         <outlet property="rateval" destination="qat-Za-rKq" id="YWW-fC-VWE"/>
                         <outlet property="toval" destination="Zpq-FH-2c5" id="rNJ-Xs-7iG"/>

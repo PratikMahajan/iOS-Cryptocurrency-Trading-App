@@ -13,6 +13,7 @@ class TrnasactionDetailsVC: UIViewController {
     
     var key : TransactionData = TransactionData(from: "", to: "", quantity: 0, price: 0.0)
     
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var fromval: UILabel!
     @IBOutlet weak var toval: UILabel!
     @IBOutlet weak var quantityval: UILabel!
@@ -36,6 +37,11 @@ class TrnasactionDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navBar.barTintColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        navBar.isTranslucent = true;
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
         setValues()
         // Do any additional setup after loading the view.
     }
