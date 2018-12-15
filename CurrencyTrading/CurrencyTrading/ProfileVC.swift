@@ -61,7 +61,7 @@ class ProfileVC: UIViewController {
         loginCheck()
         
         profileImage.layer.masksToBounds = true
-        profileImage.layer.cornerRadius = profileImage.frame.width/2
+        profileImage.layer.cornerRadius = 78.5
         profileImage.clipsToBounds = true
         
         let url = URL(string: "https://ui-avatars.com/api/?size=512&background=0D8ABC&color=fff&name=Pratik+Mahajan")
