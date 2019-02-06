@@ -34,6 +34,7 @@ Once verified, the user can do the following tasks
 2. Send BUY request (to buy coins)
 3. Check current price of the coin.
 4. Update Profile and upload new Documents
+5. Look at all the previous transactions 
 
 
 ##### This program is written in iOS, There is a Java-Swing version of this application. See [here](https://github.com/PratikMahajan/Cloud-Based-Cryptocurrency-Trading)
